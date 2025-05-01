@@ -1,0 +1,3 @@
+[submodule "FedBiscuit"]
+	path = FedBiscuit
+	url = https://github.com/schole-ai/FedBiscuit.git
