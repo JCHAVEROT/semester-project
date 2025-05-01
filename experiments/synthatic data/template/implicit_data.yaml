@@ -1,0 +1,15 @@
+# Implicit Behavioral Data Variables
+implicit_data_variables:
+  - timestamped_clicks: # List of all clicks with timestamps (e.g., button presses, navigation)
+  - scrolling_behavior: # Scrolling depth, speed, and frequency during content consumption
+  - time_on_task_per_module: # Duration a user spends on each learning module or page
+  - skipped_modules: # List of modules that were skipped by the user
+  - engagement_metrics: # Completion rates, frequency of activity, interaction levels
+  - drag_and_drop_curriculum_edits: # Reordering or restructuring of the learning path via drag-and-drop
+  - pace_tracking_signals: # Estimated learning speed from knowledge tracing (e.g., fast vs slow pace)
+  - drop_off_events: # Points where users abandon a module or quit mid-session
+  - content_adaptation_requests: # Requests made by users to adjust difficulty or format
+  - memory_usage_patterns: # Tracking usage of personalized memory features (e.g., saved preferences)
+  - questions_asked_to_tutor: # Number and type of questions posed to the tutor
+  - number_of_retries_on_quizzes: # Number of attempts needed to successfully complete quizzes
+  - response_times: # Time taken to answer questions or to interact after prompts

@@ -1,0 +1,13 @@
+# Explicit Feedback Data Variables
+explicit_data_variables:
+  - ratings_on_modules: # User ratings on the effectiveness and quality of learning modules
+  - approval_of_content_modifications: # Whether the user accepted or rejected system-suggested changes
+  - explicit_learning_goals: # Stated learning goals or objectives provided by the user
+  - curriculum_editing_feedback: # Feedback given after modifying the suggested curriculum
+  - preferred_content_format: # User preference among text, video, or audio content
+  - reflection_inputs: # Written explanations for curriculum modifications or preferences
+  - satisfaction_surveys: # Survey responses about overall platform satisfaction
+  - skill_self_assessments: # Self-evaluated skill level before and after learning sessions
+  - relevance_feedback: # Feedback about whether the content matched the user’s real-world needs
+  - difficulty_feedback: # Perceived difficulty level of content (too easy, appropriate, too hard)
+  - trust_feedback: # Degree of trust in the platform’s tutoring and recommendations
