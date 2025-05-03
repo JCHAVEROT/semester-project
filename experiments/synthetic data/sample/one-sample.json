@@ -1,0 +1,87 @@
+{
+    "uid": 1,
+    "implicit_data": {
+      "timestamped_clicks": [
+        {"timestamp": "2025-04-28T10:00:00Z", "element": "start_module_button"},
+        {"timestamp": "2025-04-28T10:02:30Z", "element": "next_page_arrow"},
+        {"timestamp": "2025-04-28T10:05:00Z", "element": "quiz_submit_button"}
+      ],
+      "scrolling_behavior": {
+        "average_scroll_depth": 75, 
+        "scroll_speed": "medium",
+        "scroll_events": 12
+      },
+      "time_on_task_per_module": {
+        "module_1": 320, 
+        "module_2": 180
+      },
+      "skipped_modules": [
+        "module_3"
+      ],
+      "engagement_metrics": {
+        "completion_rate": 80,
+        "active_minutes": 12
+      },
+      "pace_tracking_signals": {
+        "average_pace": 0.68
+      },
+      "drop_off_events": [
+        {"timestamp": "2025-04-28T10:10:00Z", "module": "module_3"}
+      ],
+      "content_adaptation_requests": [
+        {"timestamp": "2025-04-28T10:06:00Z", "request": "simplify_explanation"}
+      ],
+      "memory_usage_patterns": {
+        "personal_notes_added": 3,
+        "memory_recalls": 2
+      },
+      "questions_asked_to_tutor": [
+        {"timestamp": "2025-04-28T10:04:00Z", "question": "Can you explain bias again?"}
+      ],
+      "number_of_retries_on_quizzes": {
+        "quiz_1": 2
+      },
+      "response_times": {
+        "quiz_1_question_1": 15,
+        "quiz_1_question_2": 22
+      }
+    },
+    "explicit_data": {
+      "ratings_on_modules": {
+        "module_1": 4,
+        "module_2": 5
+      },
+      "approval_of_content_modifications": [
+        {
+          "change_id": "module_3_title_update",
+          "change": "Update title of Module 3 to 'Advanced Topics'",
+          "status": "approved"
+        },
+        {
+          "change_id": "module_2_video_removal",
+          "change": "Remove outdated video from Module 2",
+          "status": "rejected"
+        }
+      ],
+      "explicit_learning_goals": "Improve understanding of algorithmic bias in AI systems.",
+      "drag_and_drop_curriculum_edits": [
+        {"module": "module_4", "from_index": 4, "to_index": 1},
+        {"module": "module_5", "from_index": 2, "to_index": 3}
+      ],
+      "curriculum_editing_feedback": "I prefer to start with real-world examples instead of theory.",
+      "preferred_content_format": "video",
+      "reflection_inputs": "I learn better with concrete examples rather than abstract explanations.",
+      "satisfaction_surveys": {
+        "overall_satisfaction": 5,
+        "interface_usability": 4,
+        "content_relevance": 5
+      },
+      "skill_self_assessments": {
+        "before_training": 2,
+        "after_training": 4
+      },
+      "relevance_feedback": 5,
+      "difficulty_feedback": 4,
+      "trust_feedback": 4
+    }
+}
