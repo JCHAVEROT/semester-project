@@ -35,8 +35,8 @@
         "personal_notes_added": 3,
         "memory_recalls": 2
       },
-      "questions_asked_to_tutor": [
-        {"timestamp": "2025-04-28T10:04:00Z", "question": "Can you explain bias again?"}
+      "interactions_with_tutor": [
+        {"timestamp": "2025-04-28T10:04:00Z", "question": "Can you explain bias again?", "response": "Bias happens when the model makes strong assumptions and ends up too simple — like using a straight line to fit a curve. It often leads to underfitting, where the model doesn't learn enough from the data."}
       ],
       "number_of_retries_on_quizzes": {
         "quiz_1": 2
