@@ -1,5 +1,5 @@
 {
-    "uid": 1,
+    "user_id": 1,
     "implicit_data": {
       "timestamped_clicks": [
         {"timestamp": "2025-04-28T10:00:00Z", "element": "start_module_button"},
