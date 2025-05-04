@@ -1,0 +1,181 @@
+[
+  {
+    "user_id": 1,
+    "explicit_data": {
+      "ratings_on_modules": {
+        "module_1": 4,
+        "module_2": 5,
+        "module_3": 3,
+        "module_4": 4,
+        "module_5": 5,
+        "module_6": 4,
+        "module_7": 3
+      },
+      "approval_of_content_modifications": [
+        {
+          "change": "Updated examples in module 2",
+          "status": "approved"
+        },
+        {
+          "change": "Added a video summary for module 3",
+          "status": "rejected"
+        },
+        {
+          "change": "Improved clarity of module 4",
+          "status": "approved"
+        },
+        {
+          "change": "Added a feedback section in module 6",
+          "status": "approved"
+        }
+      ],
+      "explicit_learning_goals": "I want to become proficient in data visualization.",
+      "drag_and_drop_curriculum_edits": [
+        {
+          "module": "module_2",
+          "from_index": 1,
+          "to_index": 2
+        },
+        {
+          "module": "module_4",
+          "from_index": 0,
+          "to_index": 1
+        },
+        {
+          "module": "module_6",
+          "from_index": 2,
+          "to_index": 1
+        }
+      ],
+      "curriculum_editing_feedback": "More practical exercises would be beneficial.",
+      "preferred_content_format": "video",
+      "reflection_inputs": "The quizzes were challenging but helped reinforce learning.",
+      "satisfaction_surveys": {
+        "overall_satisfaction": 4,
+        "interface_usability": 5,
+        "content_relevance": 4
+      },
+      "skill_self_assessments": {
+        "before_training": 2,
+        "after_training": 4
+      },
+      "relevance_feedback": 4,
+      "difficulty_feedback": 3,
+      "trust_feedback": 5
+    },
+    "implicit_data": {
+      "timestamped_clicks": [
+        {
+          "timestamp": "2023-10-01T10:00:00Z",
+          "element": "module_1"
+        },
+        {
+          "timestamp": "2023-10-01T10:30:00Z",
+          "element": "quiz_1"
+        },
+        {
+          "timestamp": "2023-10-01T11:05:00Z",
+          "element": "module_4"
+        },
+        {
+          "timestamp": "2023-10-01T11:30:00Z",
+          "element": "module_5"
+        },
+        {
+          "timestamp": "2023-10-01T12:15:00Z",
+          "element": "module_6"
+        },
+        {
+          "timestamp": "2023-10-01T12:20:00Z",
+          "element": "quiz_3"
+        }
+      ],
+      "scrolling_behavior": {
+        "average_scroll_depth": 70,
+        "scroll_speed": "medium",
+        "scroll_events": 15
+      },
+      "time_on_task_per_module": {
+        "module_1": 720,
+        "module_2": 900,
+        "module_3": 300,
+        "module_4": 450,
+        "module_5": 600,
+        "module_6": 480
+      },
+      "skipped_modules": [
+        "module_4"
+      ],
+      "engagement_metrics": {
+        "completion_rate": 80,
+        "active_minutes": 180
+      },
+      "pace_tracking_signals": {
+        "average_pace": 0.75
+      },
+      "drop_off_events": [
+        {
+          "timestamp": "2023-10-01T12:00:00Z",
+          "module": "module_3"
+        },
+        {
+          "timestamp": "2023-10-01T11:50:00Z",
+          "module": "module_5"
+        },
+        {
+          "timestamp": "2023-10-01T12:40:00Z",
+          "module": "module_6"
+        }
+      ],
+      "content_adaptation_requests": [
+        {
+          "timestamp": "2023-10-01T11:00:00Z",
+          "request": "More examples for module 1"
+        },
+        {
+          "timestamp": "2023-10-01T11:20:00Z",
+          "request": "Add more visual content for module 5"
+        },
+        {
+          "timestamp": "2023-10-01T12:30:00Z",
+          "request": "Include more interactive exercises in module 6"
+        }
+      ],
+      "memory_usage_patterns": {
+        "personal_notes_added": 5,
+        "memory_recalls": 2
+      },
+      "interactions_with_tutor": [
+        {
+          "timestamp": "2023-10-01T10:15:00Z",
+          "question": "What tools should I use for data visualization?",
+          "response": "Consider using Tableau or Power BI."
+        },
+        {
+          "timestamp": "2023-10-01T11:40:00Z",
+          "question": "How can I improve my data storytelling?",
+          "response": "Focus on narrative and audience engagement."
+        },
+        {
+          "timestamp": "2023-10-01T12:10:00Z",
+          "question": "What are best practices for creating engaging dashboards?",
+          "response": "Limit the amount of information, use clear visuals."
+        }
+      ],
+      "number_of_retries_on_quizzes": {
+        "quiz_1": 2,
+        "quiz_2": 1,
+        "quiz_3": 3,
+        "quiz_4": 2
+      },
+      "response_times": {
+        "quiz_1_question_1": 30,
+        "quiz_1_question_2": 45,
+        "quiz_3_question_1": 50,
+        "quiz_3_question_2": 35,
+        "quiz_4_question_1": 40,
+        "quiz_4_question_2": 55
+      }
+    }
+  }
+]

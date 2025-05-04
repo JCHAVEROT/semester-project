@@ -1,0 +1,250 @@
+[
+  {
+    "user_id": 1,
+    "explicit_data": {
+      "ratings_on_modules": {
+        "module_1": 4,
+        "module_2": 5,
+        "module_3": 3,
+        "module_4": 5,
+        "module_5": 4
+      },
+      "approval_of_content_modifications": [
+        {
+          "change": "Added more examples",
+          "status": "approved"
+        },
+        {
+          "change": "Changed module title",
+          "status": "rejected"
+        },
+        {
+          "change": "Improved clarity of explanations",
+          "status": "approved"
+        }
+      ],
+      "explicit_learning_goals": "Improve understanding of machine learning concepts.",
+      "drag_and_drop_curriculum_edits": [
+        {
+          "module": "module_2",
+          "from_index": 1,
+          "to_index": 0
+        },
+        {
+          "module": "module_3",
+          "from_index": 2,
+          "to_index": 1
+        }
+      ],
+      "curriculum_editing_feedback": "It would be helpful to have more hands-on projects.",
+      "preferred_content_format": "video",
+      "reflection_inputs": "I feel more confident in data visualization.",
+      "satisfaction_surveys": {
+        "overall_satisfaction": 4,
+        "interface_usability": 5,
+        "content_relevance": 4
+      },
+      "skill_self_assessments": {
+        "before_training": 2,
+        "after_training": 4
+      },
+      "relevance_feedback": 4,
+      "difficulty_feedback": 3,
+      "trust_feedback": 5
+    },
+    "implicit_data": {
+      "timestamped_clicks": [
+        {
+          "timestamp": "2023-09-25T10:00:00Z",
+          "element": "module_2_video"
+        },
+        {
+          "timestamp": "2023-09-25T10:05:00Z",
+          "element": "lesson_notes"
+        },
+        {
+          "timestamp": "2023-09-25T10:30:00Z",
+          "element": "module_4_quiz"
+        },
+        {
+          "timestamp": "2023-09-25T10:35:00Z",
+          "element": "module_5_video"
+        }
+      ],
+      "scrolling_behavior": {
+        "average_scroll_depth": 80,
+        "scroll_speed": "medium",
+        "scroll_events": 15
+      },
+      "time_on_task_per_module": {
+        "module_1": 600,
+        "module_2": 1200,
+        "module_3": 300,
+        "module_4": 800,
+        "module_5": 400
+      },
+      "skipped_modules": [
+        "module_4"
+      ],
+      "engagement_metrics": {
+        "completion_rate": 75,
+        "active_minutes": 30
+      },
+      "pace_tracking_signals": {
+        "average_pace": 0.7
+      },
+      "drop_off_events": [
+        {
+          "timestamp": "2023-09-25T10:15:00Z",
+          "module": "module_3"
+        },
+        {
+          "timestamp": "2023-09-25T10:40:00Z",
+          "module": "module_4"
+        }
+      ],
+      "content_adaptation_requests": [
+        {
+          "timestamp": "2023-09-25T10:20:00Z",
+          "request": "More practical examples needed."
+        },
+        {
+          "timestamp": "2023-09-25T10:45:00Z",
+          "request": "Simplify the explanations in module 5."
+        }
+      ],
+      "memory_usage_patterns": {
+        "personal_notes_added": 5,
+        "memory_recalls": 10
+      },
+      "interactions_with_tutor": [
+        {
+          "timestamp": "2023-09-25T10:25:00Z",
+          "question": "Can you explain overfitting?",
+          "response": "Overfitting happens when a model learns the training data too well."
+        },
+        {
+          "timestamp": "2023-09-25T10:50:00Z",
+          "question": "What is the best way to validate a model?",
+          "response": "Use cross-validation techniques."
+        }
+      ],
+      "number_of_retries_on_quizzes": {
+        "quiz_1": 2,
+        "quiz_2": 1,
+        "quiz_4": 1
+      },
+      "response_times": {
+        "quiz_1_question_1": 30,
+        "quiz_1_question_2": 50,
+        "quiz_4_question_1": 40
+      }
+    }
+  },
+  {
+    "user_id": 2,
+    "explicit_data": {
+      "ratings_on_modules": {
+        "module_1": 2,
+        "module_2": 3,
+        "module_3": 4,
+        "module_4": 2,
+        "module_5": 3
+      },
+      "approval_of_content_modifications": [
+        {
+          "change": "Add interactive exercises",
+          "status": "approved"
+        },
+        {
+          "change": "Increased video length",
+          "status": "rejected"
+        }
+      ],
+      "explicit_learning_goals": "Need a clearer understanding of statistics.",
+      "drag_and_drop_curriculum_edits": [],
+      "curriculum_editing_feedback": "The content is a bit overwhelming.",
+      "preferred_content_format": "text",
+      "reflection_inputs": "I'm struggling with some concepts.",
+      "satisfaction_surveys": {
+        "overall_satisfaction": 3,
+        "interface_usability": 4,
+        "content_relevance": 3
+      },
+      "skill_self_assessments": {
+        "before_training": 3,
+        "after_training": 2
+      },
+      "relevance_feedback": 3,
+      "difficulty_feedback": 4,
+      "trust_feedback": 2
+    },
+    "implicit_data": {
+      "timestamped_clicks": [
+        {
+          "timestamp": "2023-09-26T11:00:00Z",
+          "element": "module_1_quiz"
+        },
+        {
+          "timestamp": "2023-09-26T11:05:00Z",
+          "element": "module_2_video"
+        },
+        {
+          "timestamp": "2023-09-26T11:10:00Z",
+          "element": "module_3_quiz"
+        }
+      ],
+      "scrolling_behavior": {
+        "average_scroll_depth": 50,
+        "scroll_speed": "slow",
+        "scroll_events": 10
+      },
+      "time_on_task_per_module": {
+        "module_1": 900,
+        "module_2": 600,
+        "module_3": 1200,
+        "module_4": 500,
+        "module_5": 700
+      },
+      "skipped_modules": [
+        "module_4"
+      ],
+      "engagement_metrics": {
+        "completion_rate": 50,
+        "active_minutes": 25
+      },
+      "pace_tracking_signals": {
+        "average_pace": 0.3
+      },
+      "drop_off_events": [
+        {
+          "timestamp": "2023-09-26T11:15:00Z",
+          "module": "module_1"
+        },
+        {
+          "timestamp": "2023-09-26T11:20:00Z",
+          "module": "module_5"
+        }
+      ],
+      "content_adaptation_requests": [
+        {
+          "timestamp": "2023-09-26T11:25:00Z",
+          "request": "Need simpler examples."
+        }
+      ],
+      "memory_usage_patterns": {
+        "personal_notes_added": 2,
+        "memory_recalls": 5
+      },
+      "interactions_with_tutor": [],
+      "number_of_retries_on_quizzes": {
+        "quiz_1": 3,
+        "quiz_3": 2
+      },
+      "response_times": {
+        "quiz_1_question_1": 45,
+        "quiz_3_question_1": 60
+      }
+    }
+  }
+]
