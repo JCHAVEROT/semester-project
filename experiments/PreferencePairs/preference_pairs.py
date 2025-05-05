@@ -6,12 +6,16 @@ def compute_score(data: Dict) -> float:
     implicit = data["implicit_data"]
     explicit = data["explicit_data"]
     
+    # Thresholds to cap the values
+    MAX_TIME_ON_TASK = 10_800  # Max 3 hours
+    MAX_ACTIVE_MINUTES = 600  # Max active minutes (10 hours)
+    
     # Implicit features
-    time_on_task = sum(implicit["time_on_task_per_module"].values())
+    time_on_task = min(sum(implicit["time_on_task_per_module"].values()), MAX_TIME_ON_TASK)
     scroll_depth = implicit["scrolling_behavior"]["average_scroll_depth"]
     scroll_events = implicit["scrolling_behavior"]["scroll_events"]
     completion_rate = implicit["engagement_metrics"]["completion_rate"]
-    active_minutes = implicit["engagement_metrics"]["active_minutes"]
+    active_minutes = min(implicit["engagement_metrics"]["active_minutes"], MAX_ACTIVE_MINUTES)
     memory_use = implicit["memory_usage_patterns"]["personal_notes_added"] + implicit["memory_usage_patterns"]["memory_recalls"]
     retries = sum(implicit.get("number_of_retries_on_quizzes", {}).values())
     response_times = sum(implicit.get("response_times", {}).values())
