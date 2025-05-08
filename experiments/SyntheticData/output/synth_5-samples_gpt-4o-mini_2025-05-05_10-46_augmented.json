@@ -1,0 +1,515 @@
+[
+  {
+    "user_id": 1,
+    "explicit_data": {
+      "ratings_on_modules": {
+        "module_1": 4,
+        "module_2": 5,
+        "module_3": 3,
+        "module_4": 4
+      },
+      "approval_of_content_modifications": [
+        {
+          "change": "Added more examples to module_2",
+          "status": "approved"
+        },
+        {
+          "change": "Completed module_3 too quickly",
+          "status": "rejected"
+        },
+        {
+          "change": "Clarified concepts in module_4",
+          "status": "approved"
+        }
+      ],
+      "explicit_learning_goals": "I want to master machine learning.",
+      "drag_and_drop_curriculum_edits": [
+        {
+          "module": "module_2",
+          "from_index": 0,
+          "to_index": 1
+        },
+        {
+          "module": "module_4",
+          "from_index": 0,
+          "to_index": 2
+        }
+      ],
+      "curriculum_editing_feedback": "I would appreciate more hands-on projects.",
+      "preferred_content_format": "video",
+      "reflection_inputs": "I felt challenged but learned a lot.",
+      "satisfaction_surveys": {
+        "overall_satisfaction": 4,
+        "interface_usability": 5,
+        "content_relevance": 4
+      },
+      "skill_self_assessments": {
+        "before_training": 2,
+        "after_training": 4
+      },
+      "relevance_feedback": 5,
+      "difficulty_feedback": 3,
+      "trust_feedback": 4
+    },
+    "implicit_data": {
+      "timestamped_clicks": [
+        {
+          "timestamp": "2025-05-01T10:00:00Z",
+          "element": "module_2"
+        },
+        {
+          "timestamp": "2025-05-01T10:15:00Z",
+          "element": "module_3"
+        },
+        {
+          "timestamp": "2025-05-01T10:45:00Z",
+          "element": "quiz_1"
+        },
+        {
+          "timestamp": "2025-05-01T11:00:00Z",
+          "element": "module_4"
+        }
+      ],
+      "scrolling_behavior": {
+        "average_scroll_depth": 85,
+        "scroll_speed": "medium",
+        "scroll_events": 30
+      },
+      "time_on_task_per_module": {
+        "module_1": 1800,
+        "module_2": 2400,
+        "module_3": 1200,
+        "module_4": 1500
+      },
+      "skipped_modules": [],
+      "engagement_metrics": {
+        "completion_rate": 90,
+        "active_minutes": 50
+      },
+      "pace_tracking_signals": {
+        "average_pace": 0.7
+      },
+      "drop_off_events": [],
+      "content_adaptation_requests": [],
+      "memory_usage_patterns": {
+        "personal_notes_added": 5,
+        "memory_recalls": 10
+      },
+      "interactions_with_tutor": [
+        {
+          "timestamp": "2025-05-01T10:30:00Z",
+          "question": "Can you explain gradient descent?",
+          "response": "Sure! It's a way to optimize your algorithm by adjusting weights."
+        },
+        {
+          "timestamp": "2025-05-01T11:20:00Z",
+          "question": "What is overfitting?",
+          "response": "Overfitting is when your model learns the training data too well."
+        }
+      ],
+      "number_of_retries_on_quizzes": {
+        "quiz_1": 1,
+        "quiz_2": 0
+      },
+      "response_times": {
+        "quiz_1_question_1": 8,
+        "quiz_1_question_2": 12,
+        "quiz_2_question_1": 10
+      }
+    }
+  },
+  {
+    "user_id": 2,
+    "explicit_data": {
+      "ratings_on_modules": {
+        "module_1": 3,
+        "module_2": 3,
+        "module_3": 5,
+        "module_4": 4
+      },
+      "approval_of_content_modifications": [
+        {
+          "change": "Include more advanced topics in module_1",
+          "status": "approved"
+        },
+        {
+          "change": "Revised examples in module_4",
+          "status": "approved"
+        }
+      ],
+      "explicit_learning_goals": "I want to understand Python for data science.",
+      "drag_and_drop_curriculum_edits": [],
+      "curriculum_editing_feedback": "It felt too basic for me.",
+      "preferred_content_format": "text",
+      "reflection_inputs": "I need more challenges in the earlier modules.",
+      "satisfaction_surveys": {
+        "overall_satisfaction": 3,
+        "interface_usability": 4,
+        "content_relevance": 3
+      },
+      "skill_self_assessments": {
+        "before_training": 3,
+        "after_training": 4
+      },
+      "relevance_feedback": 4,
+      "difficulty_feedback": 2,
+      "trust_feedback": 3
+    },
+    "implicit_data": {
+      "timestamped_clicks": [
+        {
+          "timestamp": "2025-05-01T11:00:00Z",
+          "element": "module_1"
+        },
+        {
+          "timestamp": "2025-05-01T11:30:00Z",
+          "element": "module_3"
+        },
+        {
+          "timestamp": "2025-05-01T12:00:00Z",
+          "element": "module_4"
+        }
+      ],
+      "scrolling_behavior": {
+        "average_scroll_depth": 40,
+        "scroll_speed": "slow",
+        "scroll_events": 15
+      },
+      "time_on_task_per_module": {
+        "module_1": 1200,
+        "module_2": 1500,
+        "module_3": 2100,
+        "module_4": 1800
+      },
+      "skipped_modules": [
+        "module_2"
+      ],
+      "engagement_metrics": {
+        "completion_rate": 50,
+        "active_minutes": 40
+      },
+      "pace_tracking_signals": {
+        "average_pace": 0.5
+      },
+      "drop_off_events": [
+        {
+          "timestamp": "2025-05-01T11:50:00Z",
+          "module": "module_2"
+        }
+      ],
+      "content_adaptation_requests": [
+        {
+          "timestamp": "2025-05-01T11:20:00Z",
+          "request": "Would like more quizzes after each module."
+        },
+        {
+          "timestamp": "2025-05-01T12:15:00Z",
+          "request": "Add practical exercises in module_4."
+        }
+      ],
+      "memory_usage_patterns": {
+        "personal_notes_added": 2,
+        "memory_recalls": 4
+      },
+      "interactions_with_tutor": [],
+      "number_of_retries_on_quizzes": {
+        "quiz_1": 2,
+        "quiz_2": 1
+      },
+      "response_times": {
+        "quiz_1_question_1": 15,
+        "quiz_1_question_2": 10,
+        "quiz_2_question_1": 12
+      }
+    }
+  },
+  {
+    "user_id": 3,
+    "explicit_data": {
+      "ratings_on_modules": {
+        "module_1": 2,
+        "module_2": 2,
+        "module_3": 2,
+        "module_4": 3
+      },
+      "approval_of_content_modifications": [],
+      "explicit_learning_goals": "I'm looking for a fundamental overview.",
+      "drag_and_drop_curriculum_edits": [],
+      "curriculum_editing_feedback": "Modules are not engaging enough.",
+      "preferred_content_format": "audio",
+      "reflection_inputs": "I barely understood the material presented.",
+      "satisfaction_surveys": {
+        "overall_satisfaction": 2,
+        "interface_usability": 3,
+        "content_relevance": 2
+      },
+      "skill_self_assessments": {
+        "before_training": 2,
+        "after_training": 2
+      },
+      "relevance_feedback": 2,
+      "difficulty_feedback": 4,
+      "trust_feedback": 2
+    },
+    "implicit_data": {
+      "timestamped_clicks": [
+        {
+          "timestamp": "2025-05-01T12:00:00Z",
+          "element": "module_1"
+        },
+        {
+          "timestamp": "2025-05-01T12:20:00Z",
+          "element": "module_4"
+        }
+      ],
+      "scrolling_behavior": {
+        "average_scroll_depth": 20,
+        "scroll_speed": "slow",
+        "scroll_events": 10
+      },
+      "time_on_task_per_module": {
+        "module_1": 600,
+        "module_2": 500,
+        "module_3": 700,
+        "module_4": 800
+      },
+      "skipped_modules": [
+        "module_2",
+        "module_3"
+      ],
+      "engagement_metrics": {
+        "completion_rate": 0,
+        "active_minutes": 20
+      },
+      "pace_tracking_signals": {
+        "average_pace": 0.3
+      },
+      "drop_off_events": [
+        {
+          "timestamp": "2025-05-01T12:00:00Z",
+          "module": "module_1"
+        }
+      ],
+      "content_adaptation_requests": [
+        {
+          "timestamp": "2025-05-01T12:15:00Z",
+          "request": "Please include more beginner-friendly examples."
+        }
+      ],
+      "memory_usage_patterns": {
+        "personal_notes_added": 0,
+        "memory_recalls": 1
+      },
+      "interactions_with_tutor": [
+        {
+          "timestamp": "2025-05-01T12:10:00Z",
+          "question": "Can you explain what a DataFrame is?",
+          "response": "A DataFrame is a table-like data structure in Python."
+        },
+        {
+          "timestamp": "2025-05-01T12:30:00Z",
+          "question": "What is a list in Python?",
+          "response": "A list is a collection data type that is ordered and changeable."
+        }
+      ],
+      "number_of_retries_on_quizzes": {
+        "quiz_1": 0
+      },
+      "response_times": {}
+    }
+  },
+  {
+    "user_id": 4,
+    "explicit_data": {
+      "ratings_on_modules": {
+        "module_1": 5,
+        "module_2": 4,
+        "module_3": 5,
+        "module_4": 5
+      },
+      "approval_of_content_modifications": [
+        {
+          "change": "Add more real-world applications in module_2",
+          "status": "approved"
+        },
+        {
+          "change": "Updated theory in module_4",
+          "status": "approved"
+        }
+      ],
+      "explicit_learning_goals": "I want to become a data scientist.",
+      "drag_and_drop_curriculum_edits": [
+        {
+          "module": "module_3",
+          "from_index": 1,
+          "to_index": 0
+        }
+      ],
+      "curriculum_editing_feedback": "Very informative and practical material.",
+      "preferred_content_format": "text",
+      "reflection_inputs": "I found all the concepts very helpful.",
+      "satisfaction_surveys": {
+        "overall_satisfaction": 5,
+        "interface_usability": 5,
+        "content_relevance": 5
+      },
+      "skill_self_assessments": {
+        "before_training": 4,
+        "after_training": 5
+      },
+      "relevance_feedback": 5,
+      "difficulty_feedback": 4,
+      "trust_feedback": 5
+    },
+    "implicit_data": {
+      "timestamped_clicks": [
+        {
+          "timestamp": "2025-05-01T13:00:00Z",
+          "element": "module_1"
+        },
+        {
+          "timestamp": "2025-05-01T13:30:00Z",
+          "element": "module_2"
+        },
+        {
+          "timestamp": "2025-05-01T14:00:00Z",
+          "element": "quiz_1"
+        },
+        {
+          "timestamp": "2025-05-01T14:20:00Z",
+          "element": "module_4"
+        }
+      ],
+      "scrolling_behavior": {
+        "average_scroll_depth": 90,
+        "scroll_speed": "fast",
+        "scroll_events": 50
+      },
+      "time_on_task_per_module": {
+        "module_1": 2400,
+        "module_2": 1800,
+        "module_3": 2100,
+        "module_4": 2200
+      },
+      "skipped_modules": [],
+      "engagement_metrics": {
+        "completion_rate": 100,
+        "active_minutes": 80
+      },
+      "pace_tracking_signals": {
+        "average_pace": 0.8
+      },
+      "drop_off_events": [],
+      "content_adaptation_requests": [],
+      "memory_usage_patterns": {
+        "personal_notes_added": 8,
+        "memory_recalls": 15
+      },
+      "interactions_with_tutor": [],
+      "number_of_retries_on_quizzes": {
+        "quiz_1": 0,
+        "quiz_2": 0
+      },
+      "response_times": {
+        "quiz_1_question_1": 5,
+        "quiz_1_question_2": 7
+      }
+    }
+  },
+  {
+    "user_id": 5,
+    "explicit_data": {
+      "ratings_on_modules": {
+        "module_1": 4,
+        "module_2": 5,
+        "module_3": 4,
+        "module_4": 3
+      },
+      "approval_of_content_modifications": [
+        {
+          "change": "Increase depth in module_3",
+          "status": "approved"
+        }
+      ],
+      "explicit_learning_goals": "To get certified in data analysis.",
+      "drag_and_drop_curriculum_edits": [],
+      "curriculum_editing_feedback": "Good flow, but more depth in module_3 would help.",
+      "preferred_content_format": "video",
+      "reflection_inputs": "Interesting topics, learned a lot.",
+      "satisfaction_surveys": {
+        "overall_satisfaction": 4,
+        "interface_usability": 5,
+        "content_relevance": 5
+      },
+      "skill_self_assessments": {
+        "before_training": 3,
+        "after_training": 4
+      },
+      "relevance_feedback": 4,
+      "difficulty_feedback": 3,
+      "trust_feedback": 4
+    },
+    "implicit_data": {
+      "timestamped_clicks": [
+        {
+          "timestamp": "2025-05-01T14:15:00Z",
+          "element": "module_2"
+        },
+        {
+          "timestamp": "2025-05-01T14:30:00Z",
+          "element": "quiz_1"
+        },
+        {
+          "timestamp": "2025-05-01T14:45:00Z",
+          "element": "module_4"
+        }
+      ],
+      "scrolling_behavior": {
+        "average_scroll_depth": 75,
+        "scroll_speed": "medium",
+        "scroll_events": 25
+      },
+      "time_on_task_per_module": {
+        "module_1": 1500,
+        "module_2": 2400,
+        "module_3": 1800,
+        "module_4": 1600
+      },
+      "skipped_modules": [],
+      "engagement_metrics": {
+        "completion_rate": 80,
+        "active_minutes": 70
+      },
+      "pace_tracking_signals": {
+        "average_pace": 0.6
+      },
+      "drop_off_events": [],
+      "content_adaptation_requests": [],
+      "memory_usage_patterns": {
+        "personal_notes_added": 3,
+        "memory_recalls": 6
+      },
+      "interactions_with_tutor": [
+        {
+          "timestamp": "2025-05-01T14:00:00Z",
+          "question": "What tools are essential for data analysis?",
+          "response": "Excel, SQL, Python, and R are essential."
+        },
+        {
+          "timestamp": "2025-05-01T14:50:00Z",
+          "question": "How to use libraries like Pandas?",
+          "response": "Pandas is used for data manipulation and analysis."
+        }
+      ],
+      "number_of_retries_on_quizzes": {
+        "quiz_1": 1,
+        "quiz_2": 0
+      },
+      "response_times": {
+        "quiz_1_question_1": 9,
+        "quiz_1_question_2": 11,
+        "quiz_2_question_1": 8
+      }
+    }
+  }
+]

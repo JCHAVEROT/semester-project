@@ -1,0 +1,39 @@
+{
+  "learning_styles": {
+    "visual": {
+      "description": "This learner prefers visual representations of information such as diagrams, charts, infographics, and mind maps. They are highly responsive to videos with annotations, visual cues, color coding, and structured layouts. They tend to skip long text blocks unless accompanied by a visual aid. When encountering a new concept, they search for diagrams or visual explanations before reading the definitions."
+    },
+    "auditory": {
+      "description": "This learner understands and retains information best through listening. They prefer audio lectures, podcasts, group discussions, and oral explanations. They often replay voice notes or ask for verbal clarification instead of reading text. They benefit from talking through problems aloud and gravitate towards interactive, dialogue-based lessons or voice-annotated content."
+    },
+    "read_write": {
+      "description": "This learner excels when engaging with textual information. They prefer reading detailed documentation, taking extensive notes, writing summaries, and using glossaries or textbooks. They tend to rephrase content into their own written words and often copy-paste or write down key concepts. Their ideal resources include PDFs, slide decks, and written step-by-step guides."
+    },
+    "kinesthetic": {
+      "description": "This learner learns best through hands-on activities and real-world application. They prefer simulations, interactive exercises, problem-solving tasks, and learning-by-doing experiences. They often skip abstract explanations and look directly for practical examples or experiments. They retain knowledge by engaging in actions like building, coding, or experimenting."
+    }
+  },
+  "student_profiles": {
+    "confused_learner": {
+      "description": "This learner frequently expresses uncertainty and struggles to follow instructions or grasp core concepts. They often revisit the same material multiple times, ask for clarification in vague terms, and make basic mistakes. Their confidence is low, and they might abandon tasks halfway if overwhelmed. They need frequent reassurance and simplified explanations to stay on track."
+    },
+    "struggling_learner": {
+      "description": "This learner has consistent difficulty with content, scoring below average on assessments and needing remediation. They rarely complete tasks on time, frequently submit incorrect answers, and show signs of cognitive overload. They respond best to chunked content, scaffolding, and step-by-step guidance with immediate feedback on their mistakes."
+    },
+    "goal_oriented_learner": {
+      "description": "This learner is highly motivated by progress, grades, or personal milestones. They plan their learning sessions, track their own performance metrics, and proactively seek out resources to meet their goals. They often ask goal-specific questions and push for advanced material when they feel ready. They benefit from dashboards, streaks, and milestone achievements."
+    },
+    "fast_paced_learner": {
+      "description": "This learner consumes content rapidly, often skimming instructions or jumping directly to exercises. They favor speed over depth and may complete modules quickly but with spotty understanding. They're prone to surface-level engagement and can become bored by repetition or slow pacing. They benefit from quick feedback loops and challenges that encourage reflection."
+    },
+    "curious_explorer": {
+      "description": "This learner thrives on discovery and exploration. They frequently click on optional materials, follow external links, and engage with extra content not required for completion. They ask lots of 'why' and 'what if' questions and enjoy open-ended tasks. Their learning is nonlinear and self-directed, often favoring breadth over structured depth."
+    },
+    "social_learner": {
+      "description": "This learner prefers learning through collaboration, discussion, and social interaction. They engage actively in forums, comment on peers' posts, and seek help or validation from others. They benefit from group projects, peer reviews, and dialogue-based tasks. They learn best when they feel part of a community."
+    },
+    "passive_learner": {
+      "description": "This learner participates at the bare minimum level, avoids optional content, and rarely asks questions. They often appear disengaged, log in irregularly, and may skip feedback or instructions. Their main goal is to complete tasks with the least effort possible. They benefit from nudges, gamification, and short, varied interactions to boost attention."
+    }
+  }
+}

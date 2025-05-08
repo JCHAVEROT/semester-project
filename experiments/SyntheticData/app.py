@@ -2,6 +2,7 @@ import streamlit as st
 import json
 import os
 import re
+import ast
 import datetime
 from openai import OpenAI
 
@@ -39,6 +40,11 @@ if "last_task_type" not in st.session_state or st.session_state.last_task_type !
         with open(prompt_file, "r") as f:
             prompt_data = json.load(f)
             original_prompt = prompt_data["prompt"]
+            if task_type == "Data Synthetization":
+                with open(os.path.join("graphs", "prompt_graph.txt"), "r") as g:
+                    graph = ast.literal_eval(g.read())
+                original_prompt = original_prompt.replace("[GRAPH]", graph)
+            
     except Exception as e:
         st.error(f"Failed to load prompt: {e}")
         st.stop()

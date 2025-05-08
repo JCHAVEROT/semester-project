@@ -3,6 +3,7 @@ explicit_data_variables:
   - ratings_on_modules: # User ratings on the effectiveness and quality of learning modules
   - approval_of_content_modifications: # Whether the user accepted or rejected system-suggested changes
   - explicit_learning_goals: # Stated learning goals or objectives provided by the user
+  - initial_curriculum_state: # Ordered list of module names representing the system-suggested curriculum before any user modifications
   - drag_and_drop_curriculum_edits: # Reordering of the learning path via drag-and-drop (keep track of index changes)
   - curriculum_editing_feedback: # Feedback given after modifying the suggested curriculum
   - preferred_content_format: # User preference among text, video, or audio content
