@@ -1,19 +1,21 @@
 import streamlit as st
-import json
 import os
-import re
-import ast
 import datetime
-from openai import OpenAI
+import json
+from backend import (
+    load_json_dict,
+    load_prompt,
+    send_to_openai,
+)
 
-# Helper function
-def strip_json_markers(data: str) -> str:
-    return re.sub(r"^```(?:json)?\n|```$", "", data.strip())
-
+def spacer(height=30):
+    st.markdown(f"<div style='height: {height}px;'></div>", unsafe_allow_html=True)
 
 # --- Streamlit UI ---
 st.set_page_config(page_title="ScholéAI Data Generator", layout="centered")
-st.title("ScholéAI: Data Synthetizer & Augmentor")
+st.image("resources/scholeai.png", use_container_width=True)
+st.markdown("<h3 style='text-align: center;'>Welcome to the Future of Personalized Learning!</h3>", unsafe_allow_html=True)
+spacer(100)
 
 # Step 1: API key input
 api_key = st.text_input("🔑 Enter your OpenAI API key", type="password")
@@ -21,130 +23,134 @@ if not api_key:
     st.warning("Please enter your API key.")
     st.stop()
 
-# Reset success if API key is modified
 if "last_api_key" not in st.session_state or st.session_state.last_api_key != api_key:
     st.session_state.task_successful = False
     st.session_state.last_api_key = api_key
 
+spacer(25)
+
 # Step 2: Task type
 task_type = st.selectbox("🎯 Select the task type", ["Data Synthetization", "Data Augmentation"])
 if "last_task_type" not in st.session_state or st.session_state.last_task_type != task_type:
-    # Reset the prompt when the task type changes
     st.session_state.task_successful = False
     st.session_state.last_task_type = task_type
-
-    # Load the corresponding prompt
-    prompt_file = os.path.join("prompt", "data-synthetization.json") if task_type == "Data Synthetization" else os.path.join("prompt", "data-augmentation.json")
-
+    st.session_state.generated_result = None
     try:
-        with open(prompt_file, "r") as f:
-            prompt_data = json.load(f)
-            original_prompt = prompt_data["prompt"]
-            if task_type == "Data Synthetization":
-                with open(os.path.join("graphs", "prompt_graph.txt"), "r") as g:
-                    graph = ast.literal_eval(g.read())
-                original_prompt = original_prompt.replace("[GRAPH]", graph)
-            
+        st.session_state.original_prompt = load_prompt(task_type)
     except Exception as e:
         st.error(f"Failed to load prompt: {e}")
         st.stop()
 
-    # Store the original prompt in session state
-    st.session_state.original_prompt = original_prompt
+spacer(25)
 
-# Step 3: Select model
+# Step 3: Model selection
 model = st.selectbox("🧠 Select the model", ["gpt-4o-mini", "gpt-4o", "gpt-4", "gpt-3.5-turbo"])
 if "last_model" not in st.session_state or st.session_state.last_model != model:
     st.session_state.task_successful = False
     st.session_state.last_model = model
+    st.session_state.generated_result = None
 
-# Step 4: Load and edit prompt
+spacer(25)
+
+# Step 4: Prompt
 edited_prompt = st.text_area("📝 Prompt (editable)", value=st.session_state.original_prompt, height=300)
 if edited_prompt != st.session_state.original_prompt:
     st.session_state.task_successful = False
     st.session_state.original_prompt = edited_prompt
 
-# Step 5: Input JSON path (only for Data Augmentation)
-input_json_path = None
+spacer(25)
+
+# Step 5: Input / configuration
 input_json_data = None
-num_samples = 5  # Default number of samples for synthesis
+num_samples = 5 if task_type == "Data Synthetization" else 0
+learning_text = ""
+profile_text = ""
+
 if task_type == "Data Augmentation":
-    input_json_path = st.text_input("📁 Path to input JSON file for augmentation", value="")
-    
-    if input_json_path:
+    input_json_file = st.file_uploader("📁 Upload input JSON file for augmentation", type="json")
+    if input_json_file:
         try:
-            # Load the input JSON for augmentation
-            with open(input_json_path, "r") as f:
-                input_json_data = json.load(f)
-            
-            # Infer the number of samples based on the loaded JSON (assume it's a list)
+            input_json_data = json.load(input_json_file)
             num_samples = len(input_json_data)
-            # Display the content of the input JSON
             st.markdown("📝 **Input JSON**")
             st.code(json.dumps(input_json_data, indent=2), language="json")
-
         except Exception as e:
-            st.error(f"Failed to load input JSON file: {e}")
+            st.error(f"Failed to load input JSON: {e}")
             st.stop()
+    st.write(f"🔢 Number of samples: {num_samples}")
 
-    # Disable number of samples input for augmentation
-    st.write(f"🔢 Number of samples (inferred from JSON): {num_samples}")
-else:
-    # Step 6: Number of samples (enabled for Synthetization)
-    num_samples = st.number_input("🔁 Number of samples", min_value=1, max_value=100, value=5, step=1)
+else:  # Data Synthetization
+    learning_styles = load_json_dict(os.path.join("prompt", "learning_styles.json"))
+    student_profiles = load_json_dict(os.path.join("prompt", "student_profiles.json"))
+
+    # Learning style selection
+    learning_style_keys = ["random"] + list(learning_styles.keys())
+    selected_learning_style = st.selectbox("📘 Select a Learning Style", learning_style_keys)
+
+    if selected_learning_style == "random":
+        learning_text = "Assign each user one learning style at random from the list below, and generate data accordingly.\n"
+        learning_text += "\n".join(f"{key}: {value}" for key, value in learning_styles.items())
+        st.info("All learning styles will be used.")
+    else:
+        learning_text = learning_styles[selected_learning_style]
+        st.info(learning_text)
+
+    spacer(25)
+
+    # Student profile selection
+    profile_keys = ["random"] + list(student_profiles.keys())
+    selected_student_profile = st.selectbox("👤 Select a Student Profile", profile_keys)
+
+    if selected_student_profile == "random":
+        profile_text = "Assign each user one student profile at random from the list below, and generate data accordingly.\n"
+        profile_text += "\n".join(f"{key}: {value}" for key, value in student_profiles.items())
+        st.info("All student profiles will be used.")
+    else:
+        profile_text = student_profiles[selected_student_profile]
+        st.info(profile_text)
+
+    spacer(25)
+
+    num_samples = st.slider("🔁 Number of samples", min_value=1, max_value=50, value=5, step=1)
     if "last_num_samples" not in st.session_state or st.session_state.last_num_samples != num_samples:
         st.session_state.task_successful = False
         st.session_state.last_num_samples = num_samples
 
-# Step 7: Send request
-if st.button("🚀 Send prompt to ChatGPT"):
+spacer(25)
+
+# Step 6: Send to OpenAI
+if st.button("🚀 Send prompt to ChatGPT", use_container_width=True):
     st.session_state.task_successful = False
     try:
-        client = OpenAI(api_key=api_key)
-
         if task_type == "Data Augmentation" and input_json_data:
-            input = json.dumps(input_json_data, indent=2)
+            user_input = json.dumps(input_json_data, indent=2)
         else:
-            input = f"Generate {num_samples} sample(s)."
+            user_input = f"Generate {num_samples} sample(s).\n\n[Learning Style]\n{learning_text}\n\n[Student Profile]\n{profile_text}"
 
         with st.spinner("Generating response..."):
-            response = client.responses.create(
-                instructions=edited_prompt,
-                model=model,
-                input=input,
-            )
-            result = response.to_dict()["output"][0]["content"][0]["text"]
-            result = strip_json_markers(result)
-            st.success("✅ Data received!")
-            st.code(result, language="json")
-
+            result = send_to_openai(api_key, model, edited_prompt, user_input)
             st.session_state.generated_result = result
             st.session_state.task_successful = True
 
     except Exception as e:
         st.error(f"OpenAI API call failed: {e}")
-        st.session_state.task_successful = False
         st.stop()
 
-# Step 8: Save output only if generation was successful
+spacer(25)
+
+# Step 7: Display result
+if "generated_result" in st.session_state and st.session_state.generated_result:
+    st.success("✅ Data received!")
+    st.code(st.session_state.generated_result, language="json")
+
+spacer(25)
+
+# Step 8: Download JSON
 if st.session_state.get("task_successful", False):
-    timestamp = datetime.datetime.now().strftime('%Y-%m-%d_%H-%M')
-    if task_type == "Data Augmentation" and input_json_path:
-        # Extract file name from input JSON path for augmentation
-        input_json_filename = os.path.basename(input_json_path).split(".")[0]
-        default_filename = f"output/{input_json_filename}_augmented.json"
-    else:
-        plural_s = "s" if num_samples > 1 else ""
-        default_filename = f"output/synth_{num_samples}-sample{plural_s}_{model}_{timestamp}.json"
-
-    save_path = st.text_input("💾 Path to save JSON output", value=default_filename)
-
-    if save_path and st.button("📥 Save to file"):
-        try:
-            parsed_result = json.loads(st.session_state.generated_result)
-            os.makedirs(os.path.dirname(save_path), exist_ok=True)
-            with open(save_path, "w") as f:
-                json.dump(parsed_result, f, indent=2)
-            st.success(f"Saved output to {save_path}")
-        except Exception as e:
-            st.error(f"Failed to save file: {e}")
+    result_json = json.loads(st.session_state.generated_result)
+    st.download_button(
+        label="📥 Download the generated JSON",
+        data=json.dumps(result_json, indent=2),
+        file_name=f"generated_data_{datetime.datetime.now().strftime('%Y-%m-%d_%H-%M')}.json",
+        mime="application/json"
+    )
