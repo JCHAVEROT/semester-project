@@ -8,12 +8,20 @@ from backend import (
     send_to_openai,
 )
 
+# Define paths
+BASE_DIR = os.path.dirname(__file__)
+PROMPT_PATH = "prompts"
+RESOURCE_PATH = "resources"
+
+
+# Helper function for UI
 def spacer(height=30):
     st.markdown(f"<div style='height: {height}px;'></div>", unsafe_allow_html=True)
 
-# --- Streamlit UI ---
+
+# WebApp header
 st.set_page_config(page_title="ScholéAI Data Generator", layout="centered")
-st.image("resources/scholeai.png", use_container_width=True)
+st.image(os.path.join(BASE_DIR, RESOURCE_PATH, "scholeai.png"), use_container_width=True)
 st.markdown("<h3 style='text-align: center;'>Welcome to the Future of Personalized Learning!</h3>", unsafe_allow_html=True)
 spacer(100)
 
@@ -36,7 +44,7 @@ if "last_task_type" not in st.session_state or st.session_state.last_task_type !
     st.session_state.last_task_type = task_type
     st.session_state.generated_result = None
     try:
-        st.session_state.original_prompt = load_prompt(task_type)
+        st.session_state.original_prompt = load_prompt(task_type, base_dir=BASE_DIR)
     except Exception as e:
         st.error(f"Failed to load prompt: {e}")
         st.stop()
@@ -79,9 +87,9 @@ if task_type == "Data Augmentation":
             st.stop()
     st.write(f"🔢 Number of samples: {num_samples}")
 
-else:  # Data Synthetization
-    learning_styles = load_json_dict(os.path.join("prompt", "learning_styles.json"))
-    student_profiles = load_json_dict(os.path.join("prompt", "student_profiles.json"))
+else:
+    learning_styles = load_json_dict(os.path.join(BASE_DIR, "prompts", "learning_styles.json"))
+    student_profiles = load_json_dict(os.path.join(BASE_DIR, "prompts", "student_profiles.json"))
 
     # Learning style selection
     learning_style_keys = ["random"] + list(learning_styles.keys())
@@ -90,7 +98,7 @@ else:  # Data Synthetization
     if selected_learning_style == "random":
         learning_text = "Assign each user one learning style at random from the list below, and generate data accordingly.\n"
         learning_text += "\n".join(f"{key}: {value}" for key, value in learning_styles.items())
-        st.info("All learning styles will be used.")
+        st.info("One learning style will be randomly selected per data sample.")
     else:
         learning_text = learning_styles[selected_learning_style]
         st.info(learning_text)
@@ -104,7 +112,7 @@ else:  # Data Synthetization
     if selected_student_profile == "random":
         profile_text = "Assign each user one student profile at random from the list below, and generate data accordingly.\n"
         profile_text += "\n".join(f"{key}: {value}" for key, value in student_profiles.items())
-        st.info("All student profiles will be used.")
+        st.info("One student profile will be randomly selected per data sample.")
     else:
         profile_text = student_profiles[selected_student_profile]
         st.info(profile_text)
