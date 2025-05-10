@@ -1,3 +1,4 @@
+import base64
 import streamlit as st
 import os
 import datetime
@@ -12,6 +13,8 @@ from backend import (
 BASE_DIR = os.path.dirname(__file__)
 PROMPT_PATH = "prompts"
 RESOURCE_PATH = "resources"
+image_path = os.path.join(BASE_DIR, RESOURCE_PATH, "scholeai.png")
+url = "https://schole.ai"
 
 
 # Helper function for UI
@@ -21,8 +24,17 @@ def spacer(height=30):
 
 # WebApp header
 st.set_page_config(page_title="ScholéAI Data Generator", layout="centered")
-st.image(os.path.join(BASE_DIR, RESOURCE_PATH, "scholeai.png"), use_container_width=True)
-st.markdown("<h3 style='text-align: center;'>Welcome to the Future of Personalized Learning!</h3>", unsafe_allow_html=True)
+st.markdown(
+    f"""
+    <a href="{url}" target="_blank">
+        <img src="data:image/png;base64,{base64.b64encode(open(image_path, "rb").read()).decode()}" 
+             style="width: 100%;" />
+    </a>
+    """,
+    unsafe_allow_html=True
+)
+st.markdown("<h3 style='text-align: center;'>A New Vision for Learning AI!</h3>", unsafe_allow_html=True)
+
 spacer(100)
 
 # Step 1: API key input
