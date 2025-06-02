@@ -19,16 +19,28 @@ def strip_json_markers(data: str) -> str:
 
 
 def load_prompt(task_type, base_dir=""):
-    filename = "data_synthetization.json" if task_type == "Data Synthetization" else "data_augmentation.json"
+    if task_type == "Data Synthetization":
+        filename = "data_synthetization.json"
+    elif task_type == "Data Augmentation":
+        filename = "data_augmentation.json"
+    elif task_type == "Learning Curriculums Generation":
+        filename = "learning_curriculums.json"
+    else:
+        raise ValueError(f"Unknown task type: {task_type}")
+
     path = os.path.join(base_dir, PROMPT_PATH, filename)
     prompt_data = load_json_dict(path)
     prompt_text = prompt_data["prompt"]
 
-    # Insert graph into prompt
-    with open(os.path.join(base_dir, GRAPH_PATH, "graph.txt"), "r") as g:
-        graph = ast.literal_eval(g.read())
-    prompt_text = prompt_text.replace("[GRAPH]", graph)
-    
+    if "[GRAPH]" in prompt_text:
+        graph_path = os.path.join(base_dir, GRAPH_PATH, "graph.txt")
+        try:
+            with open(graph_path, "r") as g:
+                graph = ast.literal_eval(g.read())
+                prompt_text = prompt_text.replace("[GRAPH]", graph)
+        except Exception as e:
+            raise RuntimeError(f"Failed to load or parse graph: {e}")
+
     return prompt_text
 
 
