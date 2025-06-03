@@ -1,0 +1,95 @@
+\documentclass[headsepline,footsepline,footinclude=false,oneside,fontsize=10pt,paper=a4]{scrbook}
+\renewcommand*\familydefault{\sfdefault}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amsfonts}
+\usepackage{geometry}
+\usepackage[french]{babel}
+\usepackage{sectsty}
+\geometry{hmargin=4.5cm, vmargin=4cm}
+\usepackage{enumitem}
+
+\sectionfont{\large\bfseries}
+
+
+\begin{document}
+
+\KOMAoptions{headsepline=false}
+
+\begin{center}
+    \LARGE \textbf{REPORT OUTLINE} \\[0.5cm]
+    \normalsize \textit{Federated RLHF Pipeline for Personalized Learning with ScholéAI}
+\end{center}
+
+\vspace{1.5cm}
+
+\section*{1. Introduction}
+\begin{itemize}[leftmargin=1.5em]
+    \item Motivations: personalization, scalability, and alignment in educational AI.
+    \item Problem: aligning generative models with student preferences in federated environments.
+    \item High-level contributions and project scope.
+\end{itemize}
+
+\section*{2. Related Work}
+\begin{itemize}[leftmargin=1.5em]
+    \item Federated RLHF and educational recommendation systems.
+    \item Overview of DPO, PPO, and their limitations.
+    \item Positioning of FedBiscuit.
+\end{itemize}
+
+\section*{3. FedBiscuit Architecture}
+\begin{itemize}[leftmargin=1.5em]
+    \item End-to-end system design: clients, central server, and training loop.
+    \item Client-side preference optimization and server-side aggregation.
+    \item Advantages and current limitations of the approach.
+\end{itemize}
+
+\section*{4. Synthetic Dataset: Generation and Augmentation}
+\begin{itemize}[leftmargin=1.5em]
+    \item Prompt design using a knowledge graph for structured scenario generation.
+    \item Integration of learning styles and diverse student profiles.
+    \item Heuristic construction of preference pairs for DPO training.
+    \item Implementation of a new dataloader in FedBiscuit.
+\end{itemize}
+
+\section*{4bis. New Evaluation Component}
+\begin{itemize}[leftmargin=1.5em]
+    \item PPE Benchmark ?
+\end{itemize}
+
+\section*{5. Experiment}
+\begin{itemize}[leftmargin=1.5em]
+    \item TL;DR summarization task as a reference benchmark.
+    \item Task: Assess the training dataset size required.
+    \item Simulation design: client count, model size, number of rounds, hardware specs.
+    \item Implementation details.
+\end{itemize}
+
+\section*{6. Results}
+\begin{itemize}[leftmargin=1.5em]
+    \item Quantitative results: accuracy, alignment score, and system performance.
+    \item Visualization with graphs and tables.
+    \item Qualitative analysis and interpretation.
+\end{itemize}
+
+\section*{7. Discussion}
+\begin{itemize}[leftmargin=1.5em]
+    \item Lessons learned and what worked well.
+    \item Challenges in federated preference alignment (data distribution, model variance).
+    \item Ideas for extending the work: personalization, real-world data, privacy constraints.
+\end{itemize}
+
+\section*{8. Conclusion and Future Work}
+\begin{itemize}[leftmargin=1.5em]
+    \item Recap of objectives and core contributions.
+    \item Next steps: Deployment with real student data and system improvements.
+\end{itemize}
+
+%\section*{Appendix}
+%\begin{itemize}[leftmargin=1.5em]
+%    \item Additional figures, training logs, and metrics.
+%    \item Prompt templates and pairing heuristics.
+%    \item Config files and code snippets for reproducibility.
+%\end{itemize}
+
+\end{document}

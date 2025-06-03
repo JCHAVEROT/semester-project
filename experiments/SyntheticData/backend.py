@@ -23,7 +23,7 @@ def load_prompt(task_type, base_dir=""):
         filename = "data_synthetization.json"
     elif task_type == "Data Augmentation":
         filename = "data_augmentation.json"
-    elif task_type == "Learning Curriculums Generation":
+    elif task_type == "Curriculum Generation":
         filename = "learning_curriculums.json"
     else:
         raise ValueError(f"Unknown task type: {task_type}")
