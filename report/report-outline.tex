@@ -27,69 +27,93 @@
 \begin{itemize}[leftmargin=1.5em]
     \item Motivations: personalization, scalability, and alignment in educational AI.
     \item Problem: aligning generative models with student preferences in federated environments.
-    \item High-level contributions and project scope.
+    \item Importance of privacy in educational data handling.
+    \item Potential impacts of federated learning approaches on personalized education.
+    \item High-level contributions and project scope, emphasizing synthetic data generation and DPO training.
 \end{itemize}
 
 \section*{2. Related Work}
 \begin{itemize}[leftmargin=1.5em]
     \item Federated RLHF and educational recommendation systems.
-    \item Overview of DPO, PPO, and their limitations.
-    \item Positioning of FedBiscuit.
+    \item Comparison of standard RLHF approaches (DPO, PPO).
+    \item Limitations of PPO: high computational cost, instability in small datasets.
+    \item Advantages of DPO: direct optimization of preference alignment, efficiency.
+    \item Review of synthetic data generation techniques for personalized learning.
+    \item Positioning of FedBiscuit as a novel combination of DPO and federated techniques in educational contexts.
 \end{itemize}
 
 \section*{3. FedBiscuit Architecture}
 \begin{itemize}[leftmargin=1.5em]
-    \item End-to-end system design: clients, central server, and training loop.
-    \item Client-side preference optimization and server-side aggregation.
-    \item Advantages and current limitations of the approach.
-\end{itemize}
+    \item Detailed end-to-end federated system: client-server architecture, data flow, iterative training loop.
+    \item Client-side operations: data preprocessing, local DPO model training.
+    \item Server-side aggregation: model averaging, privacy preservation methods.
+    \item Current limitations: scalability, communication overhead.
+    \item Auto-J Evaluation component for automated performance benchmarking.
+    \end{itemize}
 
-\section*{4. Synthetic Dataset: Generation and Augmentation}
+\section*{4. Synthetic Dataset: Generation, Augmentation and Evaluation}
 \begin{itemize}[leftmargin=1.5em]
-    \item Prompt design using a knowledge graph for structured scenario generation.
-    \item Integration of learning styles and diverse student profiles.
-    \item Heuristic construction of preference pairs for DPO training.
-    \item Implementation of a new dataloader in FedBiscuit.
+    \item Integration of explicit and implicit student profile data.
+    \item Use of streamlit webapp to allow user-friendly parameter tuning.
+    \item Prompt engineering technics used, and knowledge graph (KG) for structured data generation.
+    \item Approaches to tailoring scenarios for different learning modalities and student profile.
+    \item Structure of the prompt templates.
+    \item Learning curriculum preference pairs.
+    \item Automatic and human annotation of preference pairs to evaluate quality of synthetic data.
+    %\item Changes in dataloader for handling new synthetic datasets.
+    \item Human .
 \end{itemize}
 
 \section*{4bis. New Evaluation Component}
 \begin{itemize}[leftmargin=1.5em]
-    \item PPE Benchmark ?
+    \item Introduction and rationale behind the PPE Benchmark or similar standardized benchmarking methods.
+    \item Description of evaluation metrics tailored for personalization and preference alignment.
+    \item Methods to integrate qualitative feedback into evaluation results.
+    \item Effectiveness and reliability analysis of the evaluation approach.
 \end{itemize}
 
 \section*{5. Experiment}
 \begin{itemize}[leftmargin=1.5em]
-    \item TL;DR summarization task as a reference benchmark.
-    \item Task: Assess the training dataset size required.
-    \item Simulation design: client count, model size, number of rounds, hardware specs.
-    \item Implementation details.
+    \item TL;DR summarization task as baseline for system validation.
+    \item Objective: Identify optimal training dataset size and configuration.
+    \item Simulation setup: client number, synthetic dataset distribution.
+    \item Tested model architectures and size variations.
+    \item Explored hyperparameters: federated rounds, learning rates, batch sizes.
+    \item Detailed hardware specifications for reproducibility.
+    \item Implementation of checkpoints and reproducibility protocols (e.g., random seeds).
 \end{itemize}
 
 \section*{6. Results}
 \begin{itemize}[leftmargin=1.5em]
-    \item Quantitative results: accuracy, alignment score, and system performance.
-    \item Visualization with graphs and tables.
-    \item Qualitative analysis and interpretation.
+    \item Comprehensive quantitative metrics: accuracy, alignment scores, efficiency, convergence.
+    \item Comparative analysis of simulation configurations and dataset sizes.
+    \item Visualizations: graphs, heatmaps, and informative tables.
+    \item In-depth qualitative analysis: student preference alignment, edge cases, anomalies.
+    \item Interpretation of results in federated learning context and practical implications.
 \end{itemize}
 
 \section*{7. Discussion}
 \begin{itemize}[leftmargin=1.5em]
-    \item Lessons learned and what worked well.
-    \item Challenges in federated preference alignment (data distribution, model variance).
-    \item Ideas for extending the work: personalization, real-world data, privacy constraints.
+    \item Reflections on technical decisions, effectiveness, and lessons learned.
+    \item Analysis of federated preference alignment challenges: data heterogeneity, communication overhead, client dropout.
+    \item Discussion on synthetic data efficacy compared to real-world data.
+    \item Methods to enhance personalization effectiveness further.
+    \item Future privacy enhancements (differential privacy, secure aggregation).
 \end{itemize}
 
 \section*{8. Conclusion and Future Work}
 \begin{itemize}[leftmargin=1.5em]
-    \item Recap of objectives and core contributions.
-    \item Next steps: Deployment with real student data and system improvements.
+    \item Summary of achieved goals and core contributions in federated RLHF for education.
+    \item Potential next steps: deployment with real student data, model scalability improvements.
+    \item Directions for future research: real-time feedback integration, adaptive learning paths.
+    \item Importance of user-friendly interfaces for educators using FedBiscuit.
 \end{itemize}
 
 %\section*{Appendix}
 %\begin{itemize}[leftmargin=1.5em]
-%    \item Additional figures, training logs, and metrics.
-%    \item Prompt templates and pairing heuristics.
-%    \item Config files and code snippets for reproducibility.
+%    \item Additional figures, training logs, and detailed metrics.
+%    \item Prompt templates and pairing heuristics used.
+%    \item Configuration files and reproducible code snippets.
 %\end{itemize}
 
 \end{document}
