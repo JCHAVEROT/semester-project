@@ -235,14 +235,18 @@ if "synthetic_data" in st.session_state and "evaluation_questions" in st.session
             st.session_state.current_sample_index += 1
 
     # UI layout
-    col1, col2, col3 = st.columns(3)
+    st.markdown(
+        f"<div style='text-align: center; font-weight: bold;'>Sample {st.session_state.current_sample_index + 1} / {len(data)}</div>",
+        unsafe_allow_html=True
+    )
+    
+    utils.spacer(15)
+    
+    col1, col2 = st.columns(2)
     with col1:
-        st.button("⬅️ Previous", on_click=go_previous, disabled=st.session_state.current_sample_index == 0)
+        st.button("⬅️ Previous", on_click=go_previous, disabled=st.session_state.current_sample_index == 0, use_container_width=True)
     with col2:
-        st.write(f"Sample {st.session_state.current_sample_index + 1} / {len(data)}")
-    with col3:
-        st.button("Next ➡️", on_click=go_next, disabled=st.session_state.current_sample_index == len(data) - 1)
-
+        st.button("Next ➡️", on_click=go_next, disabled=st.session_state.current_sample_index == len(data) - 1, use_container_width=True)
 
     with st.expander(f"Expand sample {st.session_state.current_sample_index + 1} of {len(data)}"):
         st.code(json.dumps(data[st.session_state.current_sample_index], indent=2), language="json")
