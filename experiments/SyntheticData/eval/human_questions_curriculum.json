@@ -1,0 +1,26 @@
+[
+  {
+    "question_id": "Q1",
+    "question": "Is the chosen plan better aligned with the learner's preferred learning modality?"
+  },
+  {
+    "question_id": "Q2",
+    "question": "Does the chosen plan follow a more coherent and pedagogically sound progression through the concepts?"
+  },
+  {
+    "question_id": "Q3",
+    "question": "Does the chosen plan provide better support for the learner’s profile (e.g., goal-oriented, struggling, curious)?"
+  },
+  {
+    "question_id": "Q4",
+    "question": "Is the selected modality in each module more appropriate for the learner than in the rejected plan?"
+  },
+  {
+    "question_id": "Q5",
+    "question": "Does the chosen plan offer better scaffolding or concept reinforcement based on the knowledge graph?"
+  },
+  {
+    "question_id": "Q6",
+    "question": "Would a tutor likely prefer assigning the chosen plan over the rejected one for this learner?"
+  }
+]

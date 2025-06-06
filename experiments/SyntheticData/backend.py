@@ -7,6 +7,7 @@ from openai import OpenAI
 
 PROMPT_PATH = "prompts"
 GRAPH_PATH = "graphs"
+EVAL_PATH = "eval"
 
 
 def load_json_dict(path):
@@ -42,6 +43,13 @@ def load_prompt(task_type, base_dir=""):
             raise RuntimeError(f"Failed to load or parse graph: {e}")
 
     return prompt_text
+
+
+def load_questions(base_dir=""):
+    path = os.path.join(base_dir, EVAL_PATH, "human_questions_synthetic.json")
+    question_text = load_json_dict(path)
+    
+    return question_text
 
 
 def send_to_openai(api_key, model, prompt, user_input):

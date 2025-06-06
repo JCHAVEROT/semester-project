@@ -1,0 +1,82 @@
+[
+    {
+      "question_id": "A1",
+      "question": "Is the output in a valid JSON parsable format?"
+    },
+    {
+      "question_id": "A2",
+      "question": "Does each user object have a unique integer 'user_id'?"
+    },
+    {
+      "question_id": "A3",
+      "question": "Does each user object contain both 'explicit_data' and 'implicit_data' sections?"
+    },
+    {
+      "question_id": "A4",
+      "question": "Are all keys in each user object strictly limited to the schema fields provided?"
+    },
+    {
+      "question_id": "A5",
+      "question": "Are all string fields non-empty where applicable (e.g., 'explicit_learning_goals', 'reflection_inputs')?"
+    },
+    {
+      "question_id": "A6",
+      "question": "Are all timestamps in the entire dataset formatted according to ISO 8601?"
+    },
+    {
+      "question_id": "A7",
+      "question": "Do all numeric rating values fall within their specified ranges (e.g., 1–5 for ratings)?"
+    },
+    {
+      "question_id": "A8",
+      "question": "Are all modules referenced in the data valid nodes present in the provided knowledge graph?"
+    },
+    {
+      "question_id": "A9",
+      "question": "Are the indices in 'drag_and_drop_curriculum_edits' valid and consistent with the 'initial_curriculum_state' array?"
+    },
+    {
+      "question_id": "A10",
+      "question": "Are the statuses in 'approval_of_content_modifications' limited to 'approved' or 'rejected'?"
+    },
+    {
+      "question_id": "A11",
+      "question": "Are 'preferred_content_format' values restricted to one of the allowed options (video, podcast, text, chatbot interactions, quiz, ai roleplay)?"
+    },
+    {
+      "question_id": "A12",
+      "question": "Are all 'scroll_speed' entries in 'scrolling_behavior' one of 'slow', 'medium', or 'fast'?"
+    },
+    {
+      "question_id": "A13",
+      "question": "Does every 'quiz_interactions' entry contain at least two quizzes with retry counts and response times?"
+    },
+    {
+      "question_id": "A14",
+      "question": "Are 'completion_rate' values integers between 0 and 100 inclusive?"
+    },
+    {
+      "question_id": "A15",
+      "question": "Are 'active_minutes' in 'engagement_metrics' non-negative integers?"
+    },
+    {
+      "question_id": "A16",
+      "question": "Are 'personal_notes_added' and 'memory_recalls' counts non-negative integers?"
+    },
+    {
+      "question_id": "A17",
+      "question": "Are all 'drop_off_events' timestamps valid ISO 8601 strings with associated modules from the knowledge graph?"
+    },
+    {
+      "question_id": "A18",
+      "question": "Do 'skipped_modules' lists only include valid modules present in the knowledge graph or initial curriculum?"
+    },
+    {
+      "question_id": "A19",
+      "question": "Are the 'skill_self_assessments' ratings between 1 and 5 inclusive for both 'before_training' and 'after_training'?"
+    },
+    {
+      "question_id": "A20",
+      "question": "Does each 'interactions_with_tutor' entry include both a non-empty 'question' and 'response'?"
+    }
+  ]  

@@ -1,0 +1,30 @@
+[
+  {
+    "question_id": "Q1",
+    "question": "Do the user behaviors feel realistic and consistent with the assigned student profile?"
+  },
+  {
+    "question_id": "Q2",
+    "question": "Does the sequence of actions and timestamps reflect plausible learning behavior over time?"
+  },
+  {
+    "question_id": "Q3",
+    "question": "Is the generated content (e.g., goals, reflections, preferences) coherent and appropriate given the context?"
+  },
+  {
+    "question_id": "Q4",
+    "question": "Do the interactions with the AI tutor sound natural and relevant to the user’s learning progress?"
+  },
+  {
+    "question_id": "Q5",
+    "question": "Do the initial curriculum and the user’s edits (e.g., module reordering or removals) make sense and align with the learner’s profile and goals?"
+  },
+  {
+    "question_id": "Q6",
+    "question": "Is there any repetition or redundancy that feels unnatural or overly templated?"
+  },
+  {
+    "question_id": "Q7",
+    "question": "Would this data be convincing if presented as part of a real learner's interaction log?"
+  }
+]
