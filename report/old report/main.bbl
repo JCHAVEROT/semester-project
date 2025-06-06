@@ -1,0 +1,275 @@
+%%% -*-BibTeX-*-
+%%% Do NOT edit. File created by BibTeX with style
+%%% ACM-Reference-Format-Journals [18-Jan-2012].
+
+\begin{thebibliography}{16}
+
+%%% ====================================================================
+%%% NOTE TO THE USER: you can override these defaults by providing
+%%% customized versions of any of these macros before the \bibliography
+%%% command.  Each of them MUST provide its own final punctuation,
+%%% except for \shownote{} and \showURL{}.  The latter two
+%%% do not use final punctuation, in order to avoid confusing it with
+%%% the Web address.
+%%%
+%%% To suppress output of a particular field, define its macro to expand
+%%% to an empty string, or better, \unskip, like this:
+%%%
+%%% \newcommand{\showURL}[1]{\unskip}   % LaTeX syntax
+%%%
+%%% \def \showURL #1{\unskip}           % plain TeX syntax
+%%%
+%%% ====================================================================
+
+\ifx \showCODEN    \undefined \def \showCODEN     #1{\unskip}     \fi
+\ifx \showISBNx    \undefined \def \showISBNx     #1{\unskip}     \fi
+\ifx \showISBNxiii \undefined \def \showISBNxiii  #1{\unskip}     \fi
+\ifx \showISSN     \undefined \def \showISSN      #1{\unskip}     \fi
+\ifx \showLCCN     \undefined \def \showLCCN      #1{\unskip}     \fi
+\ifx \shownote     \undefined \def \shownote      #1{#1}          \fi
+\ifx \showarticletitle \undefined \def \showarticletitle #1{#1}   \fi
+\ifx \showURL      \undefined \def \showURL       {\relax}        \fi
+% The following commands are used for tagged output and should be
+% invisible to TeX
+\providecommand\bibfield[2]{#2}
+\providecommand\bibinfo[2]{#2}
+\providecommand\natexlab[1]{#1}
+\providecommand\showeprint[2][]{arXiv:#2}
+
+\bibitem[Beurer-Kellner et~al\mbox{.}(2023)]%
+        {Beurer_Kellner_2023}
+\bibfield{author}{\bibinfo{person}{Luca Beurer-Kellner}, \bibinfo{person}{Marc
+  Fischer}, {and} \bibinfo{person}{Martin Vechev}.}
+  \bibinfo{year}{2023}\natexlab{}.
+\newblock \showarticletitle{Prompting Is Programming: A Query Language for
+  Large Language Models}.
+\newblock \bibinfo{journal}{\emph{Proceedings of the ACM on Programming
+  Languages}} \bibinfo{volume}{7}, \bibinfo{number}{PLDI} (\bibinfo{date}{June}
+  \bibinfo{year}{2023}), \bibinfo{pages}{1946–1969}.
+\newblock
+\showISSN{2475-1421}
+\href{https://doi.org/10.1145/3591300}{doi:\nolinkurl{10.1145/3591300}}
+
+
+\bibitem[Casper and al.(2023)]%
+        {casper2023open}
+\bibfield{author}{\bibinfo{person}{Stephen Casper} {and} \bibinfo{person}{al.}}
+  \bibinfo{year}{2023}\natexlab{}.
+\newblock \bibinfo{title}{Open Problems and Fundamental Limitations of
+  Reinforcement Learning from Human Feedback}.
+\newblock
+\showeprint[arxiv]{2307.15217}~[cs.AI]
+
+
+\bibitem[Dong et~al\mbox{.}(2024)]%
+        {dong2024surveyincontextlearning}
+\bibfield{author}{\bibinfo{person}{Qingxiu Dong}, \bibinfo{person}{Lei Li},
+  \bibinfo{person}{Damai Dai}, \bibinfo{person}{Ce Zheng},
+  \bibinfo{person}{Jingyuan Ma}, \bibinfo{person}{Rui Li},
+  \bibinfo{person}{Heming Xia}, \bibinfo{person}{Jingjing Xu},
+  \bibinfo{person}{Zhiyong Wu}, \bibinfo{person}{Tianyu Liu},
+  \bibinfo{person}{Baobao Chang}, \bibinfo{person}{Xu Sun},
+  \bibinfo{person}{Lei Li}, {and} \bibinfo{person}{Zhifang Sui}.}
+  \bibinfo{year}{2024}\natexlab{}.
+\newblock \bibinfo{title}{A Survey on In-context Learning}.
+\newblock
+\showeprint[arxiv]{2301.00234}~[cs.CL]
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2301.00234}
+\showURL{%
+\tempurl}
+
+
+\bibitem[El-Sabagh(2021)]%
+        {shih2008adaptive}
+\bibfield{author}{\bibinfo{person}{Hassan~A. El-Sabagh}.}
+  \bibinfo{year}{2021}\natexlab{}.
+\newblock \showarticletitle{Adaptive e-learning environment based on learning
+  styles and its impact on development students' engagement}.
+\newblock \bibinfo{journal}{\emph{International Journal of Educational
+  Technology in Higher Education}} \bibinfo{volume}{18}, \bibinfo{number}{1}
+  (\bibinfo{year}{2021}), \bibinfo{pages}{53}.
+\newblock
+\showISBNx{2365-9440}
+\href{https://doi.org/10.1186/s41239-021-00289-4}{doi:\nolinkurl{10.1186/s41239-021-00289-4}}
+
+
+\bibitem[Hu et~al\mbox{.}(2021)]%
+        {hu2021loralowrankadaptationlarge}
+\bibfield{author}{\bibinfo{person}{Edward~J. Hu}, \bibinfo{person}{Yelong
+  Shen}, \bibinfo{person}{Phillip Wallis}, \bibinfo{person}{Zeyuan Allen-Zhu},
+  \bibinfo{person}{Yuanzhi Li}, \bibinfo{person}{Shean Wang},
+  \bibinfo{person}{Lu Wang}, {and} \bibinfo{person}{Weizhu Chen}.}
+  \bibinfo{year}{2021}\natexlab{}.
+\newblock \bibinfo{title}{LoRA: Low-Rank Adaptation of Large Language Models}.
+\newblock
+\showeprint[arxiv]{2106.09685}~[cs.CL]
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2106.09685}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Idrizi et~al\mbox{.}(2018)]%
+        {vark-casestudy}
+\bibfield{author}{\bibinfo{person}{Ermira Idrizi}, \bibinfo{person}{Sonja
+  Filiposka}, {and} \bibinfo{person}{Vladimir Trajkovik}.}
+  \bibinfo{year}{2018}\natexlab{}.
+\newblock \showarticletitle{VARK Learning Styles and Online Education: Case
+  Study}.
+\newblock
+
+
+\bibitem[McMahan et~al\mbox{.}(2023)]%
+        {mcmahan2023communicationefficientlearningdeepnetworks}
+\bibfield{author}{\bibinfo{person}{H.~Brendan McMahan}, \bibinfo{person}{Eider
+  Moore}, \bibinfo{person}{Daniel Ramage}, \bibinfo{person}{Seth Hampson},
+  {and} \bibinfo{person}{Blaise~Agüera y Arcas}.}
+  \bibinfo{year}{2023}\natexlab{}.
+\newblock \bibinfo{title}{Communication-Efficient Learning of Deep Networks
+  from Decentralized Data}.
+\newblock
+\showeprint[arxiv]{1602.05629}~[cs.LG]
+\urldef\tempurl%
+\url{https://arxiv.org/abs/1602.05629}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Onah et~al\mbox{.}(2014)]%
+        {warwick65543}
+\bibfield{author}{\bibinfo{person}{Daniel F.~O. Onah}, \bibinfo{person}{Jane
+  Sinclair}, {and} \bibinfo{person}{Russell Boyatt}.}
+  \bibinfo{year}{2014}\natexlab{}.
+\newblock \showarticletitle{Dropout rates of massive open online courses :
+  behavioural patterns}, In \bibinfo{booktitle}{6th International Conference on
+  Education and New Learning Technologies},
+  \bibfield{editor}{\bibinfo{person}{L.~G{\'o}mez Chova},
+  \bibinfo{person}{A.~L{\'o}pez Mart{\'i}nez}, {and} \bibinfo{person}{I.~Candel
+  Torres}} (Eds.).
+\newblock \bibinfo{journal}{\emph{EDULEARN14 Proceedings}},
+  \bibinfo{pages}{5825--5834}.
+\newblock
+\showISBNx{9788461705573}
+\showISSN{2340-1117}
+\urldef\tempurl%
+\url{https://wrap.warwick.ac.uk/id/eprint/65543/}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Rafailov et~al\mbox{.}(2023)]%
+        {Rafailov2023DirectPO}
+\bibfield{author}{\bibinfo{person}{Rafael Rafailov}, \bibinfo{person}{Archit
+  Sharma}, \bibinfo{person}{Eric Mitchell}, \bibinfo{person}{Stefano Ermon},
+  \bibinfo{person}{Christopher~D. Manning}, {and} \bibinfo{person}{Chelsea
+  Finn}.} \bibinfo{year}{2023}\natexlab{}.
+\newblock \showarticletitle{Direct Preference Optimization: Your Language Model
+  is Secretly a Reward Model}.
+\newblock \bibinfo{journal}{\emph{ArXiv}}  \bibinfo{volume}{abs/2305.18290}
+  (\bibinfo{year}{2023}).
+\newblock
+
+
+\bibitem[Sahoo et~al\mbox{.}(2025)]%
+        {sahoo2025systematicsurveypromptengineering}
+\bibfield{author}{\bibinfo{person}{Pranab Sahoo}, \bibinfo{person}{Ayush~Kumar
+  Singh}, \bibinfo{person}{Sriparna Saha}, \bibinfo{person}{Vinija Jain},
+  \bibinfo{person}{Samrat Mondal}, {and} \bibinfo{person}{Aman Chadha}.}
+  \bibinfo{year}{2025}\natexlab{}.
+\newblock \bibinfo{title}{A Systematic Survey of Prompt Engineering in Large
+  Language Models: Techniques and Applications}.
+\newblock
+\showeprint[arxiv]{2402.07927}~[cs.AI]
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2402.07927}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Schulman et~al\mbox{.}(2017)]%
+        {schulman2017proximalpolicyoptimizationalgorithms}
+\bibfield{author}{\bibinfo{person}{John Schulman}, \bibinfo{person}{Filip
+  Wolski}, \bibinfo{person}{Prafulla Dhariwal}, \bibinfo{person}{Alec Radford},
+  {and} \bibinfo{person}{Oleg Klimov}.} \bibinfo{year}{2017}\natexlab{}.
+\newblock \bibinfo{title}{Proximal Policy Optimization Algorithms}.
+\newblock
+\showeprint[arxiv]{1707.06347}~[cs.LG]
+\urldef\tempurl%
+\url{https://arxiv.org/abs/1707.06347}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Stich(2019)]%
+        {stich2019localsgdconvergesfast}
+\bibfield{author}{\bibinfo{person}{Sebastian~U. Stich}.}
+  \bibinfo{year}{2019}\natexlab{}.
+\newblock \bibinfo{title}{Local SGD Converges Fast and Communicates Little}.
+\newblock
+\showeprint[arxiv]{1805.09767}~[math.OC]
+\urldef\tempurl%
+\url{https://arxiv.org/abs/1805.09767}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Wang et~al\mbox{.}(2024)]%
+        {wang2024large}
+\bibfield{author}{\bibinfo{person}{Shen Wang}, \bibinfo{person}{Tianlong Xu},
+  \bibinfo{person}{Hang Li}, \bibinfo{person}{Chaoli Zhang},
+  \bibinfo{person}{Joleen Liang}, \bibinfo{person}{Jiliang Tang},
+  \bibinfo{person}{Philip~S. Yu}, {and} \bibinfo{person}{Qingsong Wen}.}
+  \bibinfo{year}{2024}\natexlab{}.
+\newblock \bibinfo{title}{Large Language Models for Education: A Survey and
+  Outlook}.
+\newblock
+\showeprint[arxiv]{2403.18105}~[cs.CL]
+
+
+\bibitem[Wang et~al\mbox{.}(2023)]%
+        {wang2023aligning}
+\bibfield{author}{\bibinfo{person}{Yufei Wang}, \bibinfo{person}{Wanjun Zhong},
+  \bibinfo{person}{Liangyou Li}, \bibinfo{person}{Fei Mi},
+  \bibinfo{person}{Xingshan Zeng}, \bibinfo{person}{Wenyong Huang},
+  \bibinfo{person}{Lifeng Shang}, \bibinfo{person}{Xin Jiang}, {and}
+  \bibinfo{person}{Qun Liu}.} \bibinfo{year}{2023}\natexlab{}.
+\newblock \bibinfo{title}{Aligning Large Language Models with Human: A Survey}.
+\newblock
+\showeprint[arxiv]{2307.12966}~[cs.CL]
+
+
+\bibitem[Wu et~al\mbox{.}(2025)]%
+        {wu2025federatedrlhfaggregatedclient}
+\bibfield{author}{\bibinfo{person}{Feijie Wu}, \bibinfo{person}{Xiaoze Liu},
+  \bibinfo{person}{Haoyu Wang}, \bibinfo{person}{Xingchen Wang},
+  \bibinfo{person}{Lu Su}, {and} \bibinfo{person}{Jing Gao}.}
+  \bibinfo{year}{2025}\natexlab{}.
+\newblock \bibinfo{title}{Towards Federated RLHF with Aggregated Client
+  Preference for LLMs}.
+\newblock
+\showeprint[arxiv]{2407.03038}~[cs.CL]
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2407.03038}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Ye et~al\mbox{.}(2024)]%
+        {ye2024openfedllmtraininglargelanguage}
+\bibfield{author}{\bibinfo{person}{Rui Ye}, \bibinfo{person}{Wenhao Wang},
+  \bibinfo{person}{Jingyi Chai}, \bibinfo{person}{Dihan Li},
+  \bibinfo{person}{Zexi Li}, \bibinfo{person}{Yinda Xu}, \bibinfo{person}{Yaxin
+  Du}, \bibinfo{person}{Yanfeng Wang}, {and} \bibinfo{person}{Siheng Chen}.}
+  \bibinfo{year}{2024}\natexlab{}.
+\newblock \bibinfo{title}{OpenFedLLM: Training Large Language Models on
+  Decentralized Private Data via Federated Learning}.
+\newblock
+\showeprint[arxiv]{2402.06954}~[cs.LG]
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2402.06954}
+\showURL{%
+\tempurl}
+
+
+\end{thebibliography}

@@ -1,1 +1,1 @@
-[https://scholeai-data-generation.streamlit.app/](https://scholeai-data-generation.streamlit.app/)
+URL of the streamlit webapp: [https://data-for-scholeai.streamlit.app/](https://data-for-scholeai.streamlit.app/)

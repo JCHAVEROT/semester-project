@@ -1,0 +1,295 @@
+\section{Synthetic Data Generation Prompt}
+\label{appendix:prompt1}
+
+\begin{tcolorbox}[colback=gray!5!white, colframe=black!60!black, title=Prompt: Synthetic Data Generation]
+{\footnotesize
+Generate a realistic list of JSON objects that simulate synthetic user interactions with Schol\'eAI, an AI-powered personalized learning platform for Data Science learners.
+
+ScholéAI is built on a domain-specific knowledge graph, where each concept (or module) is a node, and each directed edge defines a prerequisite relationship: {A -> B} means that "A is a prerequisite for B" — users are expected to learn A before progressing to B.
+
+\vspace{0.3cm}
+
+\textbf{Knowledge Graph:}
+\textit{[PLACEHOLDER FOR THE KNOWLEDGE GRAPH]}
+
+\vspace{0.3cm}
+
+Each JSON object should reflect one user’s interaction with Schol\'eAI, capturing both:
+\begin{itemize}
+  \item \textbf{Explicit feedback} (e.g., user ratings, difficulty ratings, feedback on concept clarity)
+  \item \textbf{Implicit behavior} (e.g., time spent, modules completed, struggles or revisits)
+\end{itemize}
+
+\vspace{0.3cm}
+
+Each JSON object you generate must strictly follow this schema:
+
+\texttt{\{\\
+\ \ "user\_id": int,\\
+\ \ "explicit\_data": \{ ... \},\\
+\ \ "implicit\_data": \{ ... \}\\
+\}} \hfill \textit{(Structure shortened for readability)}
+
+\vspace{0.3cm}
+
+\textbf{Additional Instructions:}
+\begin{itemize}
+  \item Use only modules from the knowledge graph.
+  \item Return a list of user JSON objects, each with a unique \texttt{user\_id}.
+  \item Include at least 3–4 modules and 2–3 quizzes per user.
+  \item Ensure human-like coherence: e.g., users may skip modules but still rate content highly.
+  \item Ensure indices in \texttt{drag\_and\_drop\_curriculum\_edits} are consistent with \texttt{initial\_curriculum\_state}.
+  \item Use ISO 8601 format for all timestamps (e.g., \texttt{"2025-05-01T15:04:05Z"}).
+  \item Follow the schema exactly: no additional fields, no changes to structure.
+  \item Do not include any text explanation — only return the list of JSON objects.
+\end{itemize}
+}
+
+\end{tcolorbox}
+
+\section{Data Augmentation Prompt}
+\label{appendix:prompt2}
+
+\begin{tcolorbox}[colback=gray!5!white, colframe=black!60!black, title=Prompt: Data Augmentation]
+{\footnotesize
+You are given a list of JSON objects, each representing a user’s interaction with Schol\'eAI, an AI-powered personalized learning platform for Data Science learners. Each object follows this schema:
+
+\texttt{\{\\
+\ \ "user\_id": int,\\
+\ \ "explicit\_data": \{ ... \},\\
+\ \ "implicit\_data": \{ ... \}\\
+\}} \hfill \textit{(Structure shortened for readability)}
+
+\vspace{0.3cm}
+
+Each user interacts with a curriculum based on the following knowledge graph, where:
+\begin{itemize}
+  \item Each node is a learning module.
+  \item A directed edge \texttt{A $\rightarrow$ B} means that A is a prerequisite of B — users should ideally complete A before B.
+\end{itemize}
+
+\vspace{0.3cm}
+
+\textbf{Knowledge Graph:}
+\textit{[PLACEHOLDER FOR THE KNOWLEDGE GRAPH]}
+
+\vspace{0.3cm}
+
+Your task is to perform data augmentation: enrich each user's data with additional synthetic preferences and behavior signals that are realistic, diverse, and coherent with both the existing data structure and the knowledge graph. Follow these rules:
+
+\begin{enumerate}
+  \item \textbf{Preserve the} \texttt{user\_id} \textbf{and all existing fields.} Do not remove or modify any existing content.
+
+  \item \textbf{Augment the data by adding entries to:}
+  \begin{itemize}
+    \item \texttt{ratings\_on\_modules}: add realistic ratings for new modules not yet rated, respecting prerequisite logic.
+    \item \texttt{approval\_of\_content\_modifications}: simulate 1--2 approval/rejection decisions.
+    \item \texttt{initial\_curriculum\_state}: optionally add new modules from the graph.
+    \item \texttt{drag\_and\_drop\_curriculum\_edits}: add edits with consistent indices.
+    \item \texttt{timestamped\_clicks}: append newer interactions with ISO 8601 timestamps.
+    \item \texttt{drop\_off\_events}, \texttt{content\_adaptation\_requests}, \texttt{interactions\_with\_tutor}: simulate meaningful new events.
+    \item \texttt{time\_on\_task\_per\_module}: add durations for relevant prerequisite/follow-up modules.
+    \item \texttt{number\_of\_retries\_on\_quizzes}, \texttt{response\_times}: simulate quiz behavior and response time.
+  \end{itemize}
+
+  \item \textbf{Strictly follow the original schema:}
+  \begin{itemize}
+    \item Do not change field names or value formats.
+    \item Use ISO 8601 for all new timestamps (e.g., \texttt{"2025-05-01T15:04:05Z"}).
+    \item Keep numerical values within valid ranges.
+    \item Use only modules, quizzes, and fields defined in the knowledge graph/schema.
+  \end{itemize}
+
+  \item \textbf{Reflect a variety of realistic learner behaviors:}
+  \begin{itemize}
+    \item Include fast learners, methodical users, distracted users, and advanced learners skipping basics.
+    \item Vary preferences, reflection inputs, edit patterns, and tutor interactions.
+  \end{itemize}
+
+  \item \textbf{Ensure pedagogical coherence:}
+  \begin{itemize}
+    \item Do not simulate activity on modules before their prerequisites.
+    \item Quizzes and tutor questions must involve modules the user has studied or is currently studying.
+  \end{itemize}
+
+  \item \textbf{Return the same list of JSON objects, each enriched as described.} Do not wrap the output or add extra explanation — return only the final augmented data.
+\end{enumerate}
+}
+\end{tcolorbox}
+
+\section{Curriculum Pairs Generation Prompt}
+\label{appendix:prompt3}
+
+\begin{tcolorbox}[colback=gray!5!white, colframe=black!60!black, title=Prompt: Curriculum Pairs Generation]
+{\footnotesize
+You are an intelligent curriculum designer within Schol\'eAI, an online platform where students learn AI with the help of AI.
+
+Your task is to generate preference pairs of learning plans for students, based on:
+\begin{itemize}
+  \item The Schol\'eAI knowledge graph, which defines dependencies between AI concepts and modules.
+  \item Each student’s explicit and implicit data (in JSON), including learning history, pace, focus areas, and feedback.
+\end{itemize}
+
+\vspace{0.3cm}
+
+\textbf{Knowledge Graph:}
+\textit{[PLACEHOLDER FOR THE KNOWLEDGE GRAPH]}
+
+\vspace{0.3cm}
+
+\textbf{Step 1 — Infer student characteristics:}
+\begin{itemize}
+  \item \textbf{Learning modality:} one of \texttt{"visual"}, \texttt{"auditory"}, \texttt{"read/write"}, or \texttt{"kinesthetic"}
+  \item \textbf{Student profile:} one of \texttt{"confused"}, \texttt{"struggling"}, \texttt{"goal\_oriented"}, \texttt{"fast\_paced"}, \texttt{"curious\_student"}, \texttt{"social"}, or \texttt{"passive"}
+\end{itemize}
+
+\vspace{0.3cm}
+
+\textbf{Step 2 — Generate two learning plans for each pair:}
+\begin{itemize}
+  \item \textbf{Chosen:} an optimal plan aligned with the student's style, goals, and knowledge gaps
+  \item \textbf{Rejected:} a plausible but slightly suboptimal alternative (e.g., minor mismatches in modality or pacing)
+\end{itemize}
+
+Each learning plan must begin with the sentence:  
+\textit{"From your past interactions with Ol\'e, your learning modality appears to be [LEARNING\_MODALITY], and your learning behavior aligns with the [STUDENT\_PROFILE] profile."}
+
+Then follow with an ordered list of 3--6 AI-related modules. Each module should include:
+\begin{itemize}
+  \item A clear title (taken from the knowledge graph)
+  \item A content format (e.g., \texttt{"Video walkthrough"}, \texttt{"Coding exercise"}, \texttt{"Short quiz"}, \texttt{"Reading notebook"}, \texttt{"Live discussion"})
+  \item A brief rationale (1--2 lines) explaining the role of the module and the reason for the modality choice
+\end{itemize}
+
+\vspace{0.3cm}
+
+\textbf{Important constraints:}
+\begin{itemize}
+  \item The "rejected" plan must remain realistic and pedagogically sound — just slightly less well suited than the "chosen" plan
+  \item Ground all content in the AI education domain (e.g., supervised learning, backpropagation, transformers, etc.)
+  \item Ensure pedagogically meaningful contrasts between chosen and rejected plans
+  \item Format all output in valid JSON, do not include any additional explanation or wrapper content.
+\end{itemize}
+
+\vspace{0.3cm}
+
+\textbf{Multiple curriculum pairs:}
+\begin{itemize}
+  \item For each user, generate exactly \texttt{N} curriculum preference pairs as specified by the \texttt{num\_samples} field
+  \item Use the keys \texttt{"chosen\_1"}, \texttt{"rejected\_1"}, ..., \texttt{"chosen\_N"}, \texttt{"rejected\_N"}
+  \item Output exactly one JSON object per user, containing all pairs
+  \item Do not include the same \texttt{user\_id} more than once.
+\end{itemize}
+
+\vspace{0.3cm}
+
+\textbf{Example output format:}
+\begin{verbatim}
+[
+  {
+    "user_id": 7,
+    "chosen_1": "...",
+    "rejected_1": "...",
+    "chosen_2": "...",
+    "rejected_2": "...",
+    ...
+    "chosen_N": "...",
+    "rejected_N": "..."
+  }
+]
+\end{verbatim}
+
+}
+\end{tcolorbox}
+
+\section{Explicit Data Categories}
+\label{appendix:explicit_data}
+
+The following list describes the categories of explicit data used to characterize Schol\'e AI learners. These data points are directly provided by the user or derived from user feedback and preferences.
+{\footnotesize
+\begin{itemize}
+    \item \textbf{ratings\_on\_modules}: User ratings on the effectiveness and quality of learning modules.
+    \item \textbf{approval\_of\_content\_modifications}: Whether the user accepted or rejected system-suggested changes.
+    \item \textbf{explicit\_learning\_goals}: Stated learning goals or objectives provided by the user.
+    \item \textbf{initial\_curriculum\_state}: Ordered list of module names representing the system-suggested curriculum before any user modifications.
+    \item \textbf{drag\_and\_drop\_curriculum\_edits}: Reordering of the learning path via drag-and-drop (track index changes).
+    \item \textbf{curriculum\_editing\_feedback}: Feedback provided after modifying the suggested curriculum.
+    \item \textbf{preferred\_content\_format}: User preference among text, video, or audio content.
+    \item \textbf{reflection\_inputs}: Written explanations for curriculum modifications or preferences.
+    \item \textbf{satisfaction\_surveys}: Survey responses about overall platform satisfaction.
+    \item \textbf{skill\_self\_assessments}: Self-evaluated skill level before and after learning sessions.
+    \item \textbf{relevance\_feedback}: Feedback about whether the content matched the user's real-world needs (Likert scale 1-5).
+    \item \textbf{difficulty\_feedback}: Perceived difficulty level of content (Likert scale 1-5).
+    \item \textbf{trust\_feedback}: Degree of trust in the platform's tutoring and recommendations (Likert scale 1-5).
+\end{itemize}
+}
+
+\section{Implicit Data Categories}
+\label{appendix:implicit_data}
+
+The following list describes the categories of implicit data collected from user interactions on Schol\'e AI. These signals are inferred from behavior and engagement patterns.
+
+{\footnotesize
+\begin{itemize}
+    \item \textbf{timestamped\_clicks}: List of all clicks with timestamps (e.g., button presses, navigation).
+    \item \textbf{scrolling\_behavior}: Scrolling depth, speed, and frequency during content consumption.
+    \item \textbf{time\_on\_task\_per\_module}: Duration a user spends on each learning module or page.
+    \item \textbf{skipped\_modules}: List of modules that were skipped by the user.
+    \item \textbf{engagement\_metrics}: Completion rates, frequency of activity, interaction levels.
+    \item \textbf{pace\_tracking\_signals}: Estimated learning speed from knowledge tracing (e.g., fast vs slow pace).
+    \item \textbf{drop\_off\_events}: Points where users abandon a module or quit mid-session.
+    \item \textbf{content\_adaptation\_requests}: Requests made by users to adjust difficulty or format.
+    \item \textbf{memory\_usage\_patterns}: Tracking usage of personalized memory features (e.g., saved preferences).
+    \item \textbf{interactions\_with\_tutor}: Timestamps, questions, and responses during tutor interactions.
+    \item \textbf{number\_of\_retries\_on\_quizzes}: Number of attempts needed to successfully complete quizzes.
+    \item \textbf{response\_times}: Time taken to answer questions or to interact after prompts.
+\end{itemize}
+}
+
+\section{Automated Validation Checks}
+\label{appendix:validation_checks}
+
+The following true/false validation checks were used to automatically verify the structure, formatting, and consistency of the generated synthetic student data:
+
+{\footnotesize
+\begin{itemize}
+    \item \textbf{A1.} Is the output in a valid JSON parsable format?
+    \item \textbf{A2.} Does each user object have a unique integer \texttt{user\_id}?
+    \item \textbf{A3.} Does each user object contain both \texttt{explicit\_data} and \texttt{implicit\_data} sections?
+    \item \textbf{A4.} Are all keys in each user object strictly limited to the schema fields provided?
+    \item \textbf{A5.} Are all string fields non-empty where applicable (e.g., \texttt{explicit\_learning\_goals},\\ \texttt{reflection\_inputs})?
+    \item \textbf{A6.} Are all timestamps in the entire dataset formatted according to ISO 8601?
+    \item \textbf{A7.} Do all numeric rating values fall within their specified ranges (e.g., 1–5 for ratings)?
+    \item \textbf{A8.} Are all modules referenced in the data valid nodes present in the provided knowledge graph?
+    \item \textbf{A9.} Are the indices in \texttt{drag\_and\_drop\_curriculum\_edits} valid and consistent with the \\\texttt{initial\_curriculum\_state} array?
+    \item \textbf{A10.} Are the statuses in \texttt{approval\_of\_content\_modifications} limited to \texttt{approved} or \texttt{rejected}?
+    \item \textbf{A11.} Are \texttt{preferred\_content\_format} values restricted to one of the allowed options (video, podcast, \\text, chatbot interactions, quiz, ai roleplay)?
+    \item \textbf{A12.} Are all \texttt{scroll\_speed} entries in \texttt{scrolling\_behavior} one of \texttt{slow}, \texttt{medium}, or \texttt{fast}?
+    \item \textbf{A13.} Does every \texttt{quiz\_interactions} entry contain at least two quizzes with retry counts and response times?
+    \item \textbf{A14.} Are \texttt{completion\_rate} values integers between 0 and 100 inclusive?
+    \item \textbf{A15.} Are \texttt{active\_minutes} in \texttt{engagement\_metrics} non-negative integers?
+    \item \textbf{A16.} Are \texttt{personal\_notes\_added} and \texttt{memory\_recalls} counts non-negative integers?
+    \item \textbf{A17.} Are all \texttt{drop\_off\_events} timestamps valid ISO 8601 strings with associated modules from the \\knowledge graph?
+    \item \textbf{A18.} Do \texttt{skipped\_modules} lists only include valid modules present in the knowledge graph or initial curriculum?
+    \item \textbf{A19.} Are the \texttt{skill\_self\_assessments} ratings between 1 and 5 inclusive for both \texttt{before\_training} \\and \texttt{after\_training}?
+    \item \textbf{A20.} Does each \texttt{interactions\_with\_tutor} entry include both a non-empty \texttt{question} and \texttt{response}?
+\end{itemize}
+}
+
+
+\section{Human Evaluation Questions}
+\label{appendix:questions}
+
+The following yes/no questions were used by human evaluators to assess the quality and realism of the synthetic student data:
+
+{\footnotesize
+\begin{itemize}
+    \item \textbf{Q1.} Do the user behaviors feel realistic and consistent with the assigned student profile?
+    \item \textbf{Q2.} Does the sequence of actions and timestamps reflect plausible learning behavior over time?
+    \item \textbf{Q3.} Is the generated content (e.g., goals, reflections, preferences) coherent and appropriate given the context?
+    \item \textbf{Q4.} Do the interactions with the AI tutor sound natural and relevant to the user's learning progress?
+    \item \textbf{Q5.} Do the initial curriculum and the user's edits (e.g., module reordering or removals) make sense and align with \\the learner's profile?
+    \item \textbf{Q6.} Is the content free of unnatural repetition or overly templated phrasing?
+    \item \textbf{Q7.} Would this data be convincing if presented as part of a real learner's interaction log?
+\end{itemize}
+}

@@ -7,7 +7,6 @@ import datetime
 from collections import defaultdict
 import plotly.graph_objects as go
 import time
-import hashlib
 
 sys.path.append(os.path.abspath(".."))
 import utils
@@ -208,7 +207,7 @@ if synthetic_json_file and questions:
             st.plotly_chart(fig)
 
             st.download_button(
-                "Download Automated Checks Results",
+                "Download Results",
                 data=st.session_state.validation_results.to_csv(index=False),
                 file_name="automated_evaluation.csv",
                 mime="text/csv"
@@ -301,7 +300,7 @@ if st.session_state.get("step") == 2:
 
     df_detailed = pd.DataFrame(per_sample_records)
     st.download_button(
-        label="Download Expert Evaluation Results",
+        label="Download Results",
         data=df_detailed.to_csv(index=False),
         file_name="human_evaluation.csv",
         mime="text/csv"

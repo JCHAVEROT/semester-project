@@ -1,61 +1,18 @@
-This is BibTeX, Version 0.99d (TeX Live 2025)
-Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
-The top-level auxiliary file: main.aux
-The style file: ACM-Reference-Format.bst
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
-Database file #1: sample-base.bib
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
-Reallocated global_strs (elt_size=200001) to 20 items from 10.
-Reallocated glb_str_end (elt_size=4) to 20 items from 10.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
-Warning--empty booktitle in vark-casestudy
-Warning--empty publisher in vark-casestudy
-Warning--empty address in vark-casestudy
-Warning--no number and no volume in warwick65543
-Warning--page numbers missing in both pages and numpages fields in Rafailov2023DirectPO
-You've used 16 entries,
-            6056 wiz_defined-function locations,
-            1743 strings with 23837 characters,
-and the built_in function-call counts, 16955 in all, are:
-= -- 1981
-> -- 847
-< -- 0
-+ -- 294
-- -- 286
-* -- 1460
-:= -- 1860
-add.period$ -- 68
-call.type$ -- 16
-change.case$ -- 164
-chr.to.int$ -- 16
-cite$ -- 21
-duplicate$ -- 1272
-empty$ -- 905
-format.name$ -- 342
-if$ -- 3832
-int.to.chr$ -- 2
-int.to.str$ -- 1
-missing$ -- 22
-newline$ -- 208
-num.names$ -- 114
-pop$ -- 500
-preamble$ -- 1
-purify$ -- 281
-quote$ -- 0
-skip$ -- 511
-stack$ -- 0
-substring$ -- 982
-swap$ -- 99
-text.length$ -- 0
-text.prefix$ -- 0
-top$ -- 0
-type$ -- 439
-warning$ -- 5
-while$ -- 66
-width$ -- 0
-write$ -- 360
-(There were 5 warnings)
+[0] Config.pm:308> INFO - This is Biber 2.20
+[0] Config.pm:311> INFO - Logfile is 'main.blg'
+[111] biber-darwin:340> INFO - === Fri Jun  6, 2025, 23:58:10
+[137] Biber.pm:420> INFO - Reading 'main.bcf'
+[251] Biber.pm:994> INFO - Found 22 citekeys in bib section 0
+[273] Biber.pm:4463> INFO - Processing section 0
+[290] Biber.pm:4654> INFO - Looking for bibtex file 'bibliography.bib' for section 0
+[293] bibtex.pm:1713> INFO - LaTeX decoding ...
+[333] bibtex.pm:1519> INFO - Found BibTeX data source 'bibliography.bib'
+[766] UCollate.pm:68> INFO - Overriding locale 'en-GB' defaults 'variable = shifted' with 'variable = non-ignorable'
+[766] UCollate.pm:68> INFO - Overriding locale 'en-GB' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[766] Biber.pm:4283> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'en-GB'
+[766] Biber.pm:4289> INFO - No sort tailoring available for locale 'en-GB'
+[800] bbl.pm:676> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[841] bbl.pm:779> INFO - Output to main.bbl
+[842] Biber.pm:131> WARN - article entry 'shih2008adaptive' (bibliography.bib): Invalid format '2021/10/01' of date field 'date' - ignoring
+[842] Biber.pm:131> WARN - ISBN '2365-9440' in entry 'shih2008adaptive' is invalid - run biber with '--validate_datamodel' for details.
+[842] Biber.pm:133> INFO - WARNINGS: 2
