@@ -291,7 +291,7 @@ if st.session_state.get("step") == 2:
         go.Bar(name="No", x=df["Question ID"], y=df["No"], marker_color="#F44336")
     ])
     fig.update_layout(
-        title = "Bar Chart Summary of Automated Checks",
+        title = "Bar Chart Summary of Expert Evaluation",
         barmode="group",
         xaxis_title="Question ID",
         yaxis_title="Response Count"
