@@ -44,13 +44,13 @@ profiles = backend.load_json_dict(os.path.join(PROMPT_PATH, "student_profiles.js
 
 selected_style = st.selectbox("📘 Learning Modality", ["random"] + list(modalities.keys()))
 learning_text = modalities.get(selected_style, "") if selected_style != "random" else "\n".join(f"{k}: {v}" for k, v in modalities.items())
-if learning_text != "":
+if selected_style != "" and selected_style != "random":
         st.info(f"{learning_text}")
 utils.spacer()
 
 selected_profile = st.selectbox("👤 Student Profile", ["random"] + list(profiles.keys()))
 profile_text = profiles.get(selected_profile, "") if selected_profile != "random" else "\n".join(f"{k}: {v}" for k, v in profiles.items())
-if profile_text != "":
+if selected_profile != "" and selected_profile != "random":
         st.info(f"{profile_text}")
     
 utils.spacer()
