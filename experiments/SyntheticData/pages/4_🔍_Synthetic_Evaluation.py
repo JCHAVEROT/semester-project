@@ -147,7 +147,7 @@ if synthetic_json_file and questions:
                         "A2": isinstance(uid, int) and uid not in valid_user_ids,
                         "A3": "explicit_data" in sample and "implicit_data" in sample,
                         "A4": set(sample.keys()).issubset({"user_id", "explicit_data", "implicit_data"}),
-                        "A5": all(isinstance(explicit.get(k), str) and explicit.get(k).strip() for k in ["explicit_learning_goals", "reflection_inputs"]),
+                        "A5": all(isinstance(explicit.get(k), str) and explicit.get(k).strip() for k in ["explicit_learning_goals", "reflection_inputs", "curriculum_editing_feedback"]),
                         "A6": all(is_iso8601(ts) for ts in sum([
                                                                 [click.get("timestamp") for click in implicit.get("timestamped_clicks", [])],
                                                                 [d.get("timestamp") for d in implicit.get("drop_off_events", [])],
